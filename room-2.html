@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>二 · 关于这件事 · 你之所以是你</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Noto+Serif+SC:wght@400;500;600&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="top">
+  <div class="brand-block">
+    <div class="brand-dot"></div>
+    <div>
+      <div class="brand-title">你之所以是你 · 产品控制台</div>
+      <div class="brand-tag">Product · System · Console</div>
+    </div>
+  </div>
+  <div class="session-meta">
+    <div class="session-meta-item"><span class="session-meta-label">Session</span><span class="session-meta-value mono">SAMPLE · 林叙</span></div>
+    <div class="session-meta-item"><span class="session-meta-label">Status</span><span class="session-meta-value live-pulse"><span class="pulse-dot"></span> Live</span></div>
+  </div>
+</header>
+
+<div class="shell">
+<aside class="nav">
+  <div class="nav-section">总览</div>
+  <a class="nav-item" href="index.html"><span class="nav-numeral serif">◎</span><span>仪表盘</span></a>
+  <div class="nav-section">六个房间</div>
+  <a class="nav-item" href="room-1.html"><span class="nav-numeral serif">一</span><span>关于你</span><span class="nav-status"></span></a>
+  <a class="nav-item" href="room-2.html"><span class="nav-numeral serif">二</span><span>关于这件事</span><span class="nav-status"></span></a>
+  <a class="nav-item" href="room-3.html"><span class="nav-numeral serif">三</span><span>关于选项</span><span class="nav-status amber"></span></a>
+  <a class="nav-item" href="room-4.html"><span class="nav-numeral serif">四</span><span>算分</span><span class="nav-status"></span></a>
+  <a class="nav-item" href="room-5.html"><span class="nav-numeral serif">五</span><span>自检</span><span class="nav-status"></span></a>
+  <a class="nav-item" href="room-6.html"><span class="nav-numeral serif">六</span><span>答案</span><span class="nav-status"></span></a>
+  <div class="nav-section">运行</div>
+  <a class="nav-item" href="simulator.html"><span class="nav-numeral serif">▶</span><span>实时决策模拟器</span></a>
+</aside>
+
+<main class="content">
+
+<div class="crumb"><a href="index.html">仪表盘</a> · 六个房间 · 第二房间</div>
+<h1 class="page-title serif">二 · 关于这件事</h1>
+<p class="page-sub">情境识别层 · 单次决策 · 决定后续怎么处理</p>
+
+<div class="section-bar"><div class="section-title">当前决策情境</div><div class="section-meta">CURRENT CONTEXT</div></div>
+
+<div class="card">
+  <div style="font-family: 'Noto Serif SC', serif; font-size: 17px; line-height: 1.7; color: var(--ink); padding: 8px 0;">
+    "公司提供两条三年发展路径——继续在熟悉的产品线深耕成为专家，还是转入一个全新的 AI 业务部门负责从零开始的项目。我需要在这周末前做出选择。"
+  </div>
+  <div style="margin-top: 16px; padding-top: 16px; border-top: 0.5px solid var(--line); display: flex; gap: 8px; flex-wrap: wrap;">
+    <span class="pill">类型 · 职业</span>
+    <span class="pill">紧迫度 · 7 天</span>
+    <span class="pill">可逆性 · 中</span>
+    <span class="pill">范围 · 主要影响自己</span>
+  </div>
+</div>
+
+<div class="viz-grid">
+  <div class="viz-card">
+    <div class="card-head" style="margin-bottom: 8px; padding-bottom: 8px;"><div class="card-title">决策属性 · 四象限</div><div class="card-meta">PROPERTIES</div></div>
+    <div style="display: flex; flex-direction: column; gap: 14px; padding: 8px 0;">
+      <div>
+        <div style="display: flex; justify-content: space-between; font-size: 11px; margin-bottom: 4px;"><span style="color: var(--ink-muted);">紧迫度</span><span class="num" style="color: var(--gold-deep); font-weight: 500;">7 / 14 天</span></div>
+        <div style="height: 6px; background: var(--cream-deep); position: relative;"><div style="position: absolute; top: 0; left: 0; height: 6px; width: 50%; background: var(--amber);"></div></div>
+      </div>
+      <div>
+        <div style="display: flex; justify-content: space-between; font-size: 11px; margin-bottom: 4px;"><span style="color: var(--ink-muted);">可逆性</span><span class="num" style="color: var(--gold-deep); font-weight: 500;">中等 · 12-18 月</span></div>
+        <div style="height: 6px; background: var(--cream-deep); position: relative;"><div style="position: absolute; top: 0; left: 0; height: 6px; width: 55%; background: var(--gold-deep);"></div></div>
+      </div>
+      <div>
+        <div style="display: flex; justify-content: space-between; font-size: 11px; margin-bottom: 4px;"><span style="color: var(--ink-muted);">影响范围</span><span class="num" style="color: var(--gold-deep); font-weight: 500;">主要影响自己</span></div>
+        <div style="height: 6px; background: var(--cream-deep); position: relative;"><div style="position: absolute; top: 0; left: 0; height: 6px; width: 30%; background: var(--green);"></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="viz-card">
+    <div class="card-head" style="margin-bottom: 8px; padding-bottom: 8px;"><div class="card-title">系统计算 · 路由结果</div><div class="card-meta">ROUTING</div></div>
+    <div class="calc-display">
+      <span class="comment">// 决策路由算法</span><br/>
+      <span class="key">type</span> = <span class="val">"career"</span><br/>
+      <span class="key">urgency</span> = <span class="val">7d</span> <span class="comment">// medium</span><br/>
+      <span class="key">reversibility</span> = <span class="val">0.55</span><br/>
+      <span class="key">scope</span> = <span class="val">self_primary</span><br/>
+      <br/>
+      <span class="comment">// 激活模块</span><br/>
+      → 加权 <span class="val">价值 / 能力 / 愿景</span><br/>
+      → 酝酿期 = <span class="val" id="r2-period">7-14 天</span><br/>
+      → 利益相关方 = <span class="val">中度激活</span>
+    </div>
+  </div>
+</div>
+
+<div class="section-bar"><div class="section-title">策略参数</div><div class="section-meta">STRATEGY</div></div>
+<div class="card">
+  <div class="param-grid">
+    <div>
+      <div class="param-row">
+        <div><span class="param-label">高紧迫阈值（天）</span><div class="param-label-explanation">短于多少天触发"加速决策"流程，跳过部分酝酿环节。</div></div>
+        <span class="param-val num" id="urgent-thresh-val">7d</span>
+      </div>
+      <input type="range" class="slider" min="1" max="14" value="7" step="1" data-target="urgent-thresh">
+
+      <div class="param-row" style="margin-top: 20px;">
+        <div><span class="param-label">不可逆决策酝酿期（天）</span><div class="param-label-explanation">高不可逆决策强制酝酿期，期间多次回访同一问题。</div></div>
+        <span class="param-val num" id="delib-days-val">21d</span>
+      </div>
+      <input type="range" class="slider" min="14" max="60" value="21" step="1" data-target="delib-days">
+    </div>
+    <div>
+      <div class="param-row">
+        <div><span class="param-label">类型路由灵敏度</span><div class="param-label-explanation">决策类型对子模型权重的影响强度。严格 = 类型完全决定权重。</div></div>
+        <span class="param-val num" id="route-strict-val">中</span>
+      </div>
+      <input type="range" class="slider" min="1" max="3" value="2" step="1" data-target="route-strict">
+
+      <div class="toggle-row" style="margin-top: 20px;">
+        <div><span class="param-label">利益相关方权重模块</span><div class="param-label-explanation">涉及他人时自动启用，把他人核心利益作为额外维度。</div></div>
+        <div class="toggle on" data-toggle="stakeholder"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="live-output-card">
+  <div class="live-output-card-label">→ 当前输出 · 推荐处理方式</div>
+  <div class="live-output-value serif" id="r2-out">推荐酝酿期 7-14 天 · 中度调用利益相关方权重</div>
+  <div class="live-output-conf">职业类决策 · 中可逆 · 主要影响自己 · 三方一致</div>
+</div>
+
+<div class="page-nav">
+  <a class="page-nav-btn" href="room-1.html"><span>← 第一房间</span></a>
+  <a class="page-nav-btn primary" href="room-3.html"><span>第三房间 · 关于选项 →</span></a>
+</div>
+
+</main>
+</div>
+
+<footer class="bot">
+  <span>你之所以是你 · Product Console · v2.0 · 多文件架构</span>
+  <span style="color: var(--gold);">每个房间是独立工作页面</span>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

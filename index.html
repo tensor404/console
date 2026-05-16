@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>仪表盘 · 你之所以是你</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Noto+Serif+SC:wght@400;500;600&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="top">
+  <div class="brand-block">
+    <div class="brand-dot"></div>
+    <div>
+      <div class="brand-title">你之所以是你 · 产品控制台</div>
+      <div class="brand-tag">Product · System · Console</div>
+    </div>
+  </div>
+  <div class="session-meta">
+    <div class="session-meta-item">
+      <span class="session-meta-label">Session</span>
+      <span class="session-meta-value mono">SAMPLE · 林叙</span>
+    </div>
+    <div class="session-meta-item">
+      <span class="session-meta-label">Status</span>
+      <span class="session-meta-value live-pulse"><span class="pulse-dot"></span> Live</span>
+    </div>
+  </div>
+</header>
+
+<div class="shell">
+
+<aside class="nav">
+  <div class="nav-section">总览</div>
+  <a class="nav-item" href="index.html"><span class="nav-numeral serif">◎</span><span>仪表盘</span></a>
+  <div class="nav-section">六个房间</div>
+  <a class="nav-item" href="room-1.html"><span class="nav-numeral serif">一</span><span>关于你</span><span class="nav-status"></span></a>
+  <a class="nav-item" href="room-2.html"><span class="nav-numeral serif">二</span><span>关于这件事</span><span class="nav-status"></span></a>
+  <a class="nav-item" href="room-3.html"><span class="nav-numeral serif">三</span><span>关于选项</span><span class="nav-status amber"></span></a>
+  <a class="nav-item" href="room-4.html"><span class="nav-numeral serif">四</span><span>算分</span><span class="nav-status"></span></a>
+  <a class="nav-item" href="room-5.html"><span class="nav-numeral serif">五</span><span>自检</span><span class="nav-status"></span></a>
+  <a class="nav-item" href="room-6.html"><span class="nav-numeral serif">六</span><span>答案</span><span class="nav-status"></span></a>
+  <div class="nav-section">运行</div>
+  <a class="nav-item" href="simulator.html"><span class="nav-numeral serif">▶</span><span>实时决策模拟器</span></a>
+</aside>
+
+<main class="content">
+
+<h1 class="page-title serif">系统状态总览</h1>
+<p class="page-sub">六个房间 + 一个决策模拟器 · 点击任意卡片进入</p>
+
+<div class="section-bar"><div class="section-title">关键指标</div><div class="section-meta">SYSTEM KPI</div></div>
+<div class="kpi-grid">
+  <div class="kpi">
+    <div class="kpi-label">系统就绪度</div>
+    <div class="kpi-value gold num"><span id="kpi-ready">87</span><span style="font-size: 14px; color: var(--muted); margin-left: 2px;">%</span></div>
+    <div class="kpi-sub">六房间数据完整度</div>
+    <div class="kpi-bar"><div class="kpi-bar-fill green" id="kpi-ready-bar" style="width: 87%;"></div></div>
+  </div>
+  <div class="kpi">
+    <div class="kpi-label">数据健康</div>
+    <div class="kpi-value num"><span class="status-dots"><span class="dot on"></span><span class="dot on"></span><span class="dot warn"></span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span></span></div>
+    <div class="kpi-sub">5 房间健康 · 1 待补</div>
+    <div class="kpi-bar"><div class="kpi-bar-fill amber" style="width: 83%;"></div></div>
+  </div>
+  <div class="kpi">
+    <div class="kpi-label">当前决策置信</div>
+    <div class="kpi-value gold num"><span id="kpi-conf">7.2</span><span style="font-size: 14px; color: var(--muted); margin-left: 4px;">/ 10</span></div>
+    <div class="kpi-sub">高置信 · 三方一致</div>
+    <div class="kpi-bar"><div class="kpi-bar-fill" id="kpi-conf-bar" style="width: 72%;"></div></div>
+  </div>
+  <div class="kpi">
+    <div class="kpi-label">累积反哺</div>
+    <div class="kpi-value num">12<span style="font-size: 12px; color: var(--muted); margin-left: 6px;">次</span></div>
+    <div class="kpi-sub">3 次待 30 天回访</div>
+    <div class="kpi-bar"><div class="kpi-bar-fill green" style="width: 60%;"></div></div>
+  </div>
+  <div class="kpi">
+    <div class="kpi-label">画像版本</div>
+    <div class="kpi-value num">v3.2</div>
+    <div class="kpi-sub">本周更新 · 价值排序</div>
+    <div class="kpi-bar"><div class="kpi-bar-fill" style="width: 100%;"></div></div>
+  </div>
+</div>
+
+<div class="section-bar"><div class="section-title">六房间 · 点击进入</div><div class="section-meta">SIX ROOMS · CLICK TO ENTER</div></div>
+
+<div class="room-cards-grid">
+  <a class="room-nav-card" href="room-1.html">
+    <div class="room-nav-head"><div class="room-nav-num serif">一</div><div><div class="room-nav-name">关于你</div><div class="room-nav-meta">底座 · 长期</div></div></div>
+    <div style="font-size: 11px; color: var(--ink-muted); line-height: 1.6;">9 维度特质 · 价值罗盘 · 心流记录 · 人生叙事</div>
+    <div class="room-nav-mini-bar"><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span></div>
+    <div class="room-nav-status-row"><div class="status-pill"><span class="dot-inline"></span>HEALTHY</div><span class="num" style="color: var(--gold-deep); font-size: 12px;">87% 完成</span></div>
+  </a>
+  <a class="room-nav-card" href="room-2.html">
+    <div class="room-nav-head"><div class="room-nav-num serif">二</div><div><div class="room-nav-name">关于这件事</div><div class="room-nav-meta">情境 · 当次</div></div></div>
+    <div style="font-size: 11px; color: var(--ink-muted); line-height: 1.6;">决策类型 · 紧迫度 · 可逆性 · 影响范围</div>
+    <div class="room-nav-mini-bar"><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span></span></div>
+    <div class="room-nav-status-row"><div class="status-pill"><span class="dot-inline"></span>HEALTHY</div><span class="num" style="color: var(--gold-deep); font-size: 12px;">100% 完成</span></div>
+  </a>
+  <a class="room-nav-card" href="room-3.html">
+    <div class="room-nav-head"><div class="room-nav-num serif">三</div><div><div class="room-nav-name">关于选项</div><div class="room-nav-meta">真假 · 甄别</div></div></div>
+    <div style="font-size: 11px; color: var(--ink-muted); line-height: 1.6;">候选选项 · 质询响应 · 假选项识别</div>
+    <div class="room-nav-mini-bar"><span class="on"></span><span class="on"></span><span class="on"></span><span></span><span></span></div>
+    <div class="room-nav-status-row"><div class="status-pill amber"><span class="dot-inline"></span>NEEDS REVIEW</div><span class="num" style="color: var(--gold-deep); font-size: 12px;">67% 完成</span></div>
+  </a>
+  <a class="room-nav-card" href="room-4.html">
+    <div class="room-nav-head"><div class="room-nav-num serif">四</div><div><div class="room-nav-name">算分</div><div class="room-nav-meta">个性化 · 加权</div></div></div>
+    <div style="font-size: 11px; color: var(--ink-muted); line-height: 1.6;">维度矩阵 · 权重分配 · 敏感度分析</div>
+    <div class="room-nav-mini-bar"><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span></span></div>
+    <div class="room-nav-status-row"><div class="status-pill"><span class="dot-inline"></span>HEALTHY</div><span class="num" style="color: var(--gold-deep); font-size: 12px;">A: <span id="dash-a">5.9</span> · B: <span id="dash-b">8.3</span></span></div>
+  </a>
+  <a class="room-nav-card" href="room-5.html">
+    <div class="room-nav-head"><div class="room-nav-num serif">五</div><div><div class="room-nav-name">自检</div><div class="room-nav-meta">偏差 · 校验</div></div></div>
+    <div style="font-size: 11px; color: var(--ink-muted); line-height: 1.6;">5 道校验 · 直觉 / 恐惧 / 从众 / 沉没 / 旧脚本</div>
+    <div class="room-nav-mini-bar"><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span></div>
+    <div class="room-nav-status-row"><div class="status-pill"><span class="dot-inline"></span>HEALTHY</div><span class="num" style="color: var(--gold-deep); font-size: 12px;">2 项噪音</span></div>
+  </a>
+  <a class="room-nav-card" href="room-6.html">
+    <div class="room-nav-head"><div class="room-nav-num serif">六</div><div><div class="room-nav-name">答案</div><div class="room-nav-meta">报告 · 反哺</div></div></div>
+    <div style="font-size: 11px; color: var(--ink-muted); line-height: 1.6;">决策报告 · 行动第一步 · 30/90/180 回访</div>
+    <div class="room-nav-mini-bar"><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span></span></div>
+    <div class="room-nav-status-row"><div class="status-pill"><span class="dot-inline"></span>READY</div><span class="num" style="color: var(--gold-deep); font-size: 12px;">报告已生成</span></div>
+  </a>
+</div>
+
+<div class="dash-cta-row">
+  <a class="simulator-card-link" href="simulator.html">
+    <div class="sim-card-label">→ 实时决策模拟器</div>
+    <div class="sim-card-title serif">林叙的当前决策<br/>继续深耕 vs 跨入 AI 新业务</div>
+    <div class="sim-card-sub">六房间数据全部就绪 · 调任意参数都会实时影响最终评分</div>
+    <div class="sim-card-quick">
+      <div class="sim-card-quick-item"><span class="sim-card-quick-label">A 分</span><span class="sim-card-quick-val num" id="dash-a">5.9</span></div>
+      <div class="sim-card-quick-item"><span class="sim-card-quick-label">B 分</span><span class="sim-card-quick-val num" id="dash-b">8.3</span></div>
+      <div class="sim-card-quick-item"><span class="sim-card-quick-label">差距</span><span class="sim-card-quick-val num" id="dash-gap">+2.4</span></div>
+      <div class="sim-card-quick-item"><span class="sim-card-quick-label">置信</span><span class="sim-card-quick-val num" id="dash-conf">7.2</span></div>
+    </div>
+  </a>
+  <div class="health-card">
+    <div class="subsection-label">系统健康</div>
+    <div class="health-row"><span class="lbl">总数据点</span><span class="val">2,847</span></div>
+    <div class="health-row"><span class="lbl">校验通过率</span><span class="val">94%</span></div>
+    <div class="health-row"><span class="lbl">画像置信</span><span class="val">0.82</span></div>
+    <div class="health-row"><span class="lbl">本季更新</span><span class="val">7 次</span></div>
+    <div class="health-row"><span class="lbl">下次回访</span><span class="val">8 天</span></div>
+  </div>
+</div>
+
+</main>
+
+</div>
+
+<footer class="bot">
+  <span>你之所以是你 · Product Console · v2.0 · 多文件架构</span>
+  <span style="color: var(--gold);">每个房间是独立工作页面</span>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

@@ -1814,45 +1814,63 @@ function renderPipelineTrace(p) {
   const host = document.getElementById('pipe-trace-host');
   if (!host) return;
   if (p.stage === 'no-options') {
-    host.innerHTML = '<div class="pipe-trace"><div class="pipe-trace-label">PIPELINE</div><div style="color:rgba(245,240,232,0.55); font-size:11px;">尚未录入候选选项 — 请去第三房间添加。</div></div>';
+    host.innerHTML = '<div class="pipe-trace"><div class="pipe-trace-label">还没法算</div><div style="color:rgba(245,240,232,0.55); font-size:11px;">先去 "关于选项" 那里添几个选项并给每个打分，这里就会出结果。</div></div>';
     return;
   }
-  const formatVec = (v, n=3) => v.map(x => x.toFixed(n)).join(', ');
-  const ctxComposite = p.ctx.composite.toFixed(3);
+  const ctxLabel = (p.ctx.composite >= 1 ? '加分' : '扣分');
+  const ctxPctText = ((Math.abs(1 - p.ctx.composite)) * 100).toFixed(0);
+  const ctxDirection = p.ctx.composite >= 1 ? '+' : '−';
+
+  // human-readable user summary
+  const userValueText = p.user.summary; // 例 "成长/自主/深度"
+  // bias text
+  const biasPct = (p.bias.penalty * p.sim.noiseDiscount * 2 * 100).toFixed(0);
+  // sim text
+  const simBits = [];
+  if (Math.abs(p.sim.futureTilt) > 0.05) simBits.push((p.sim.futureTilt > 0 ? '为未来加分' : '为当下加分') + ' ' + Math.abs(p.sim.futureTilt*100).toFixed(0) + '%');
+  if (Math.abs(p.sim.riskTolerance - 0.5) > 0.05) simBits.push((p.sim.riskTolerance > 0.5 ? '能冒险' : '偏稳') + ' ' + Math.round(p.sim.riskTolerance*100) + '%');
+  const simText = simBits.length ? simBits.join(' · ') : '没动旋钮（中位）';
+
   const html =
     '<div class="pipe-trace">' +
-      '<div class="pipe-trace-label">PIPELINE_TRACE · v1.0</div>' +
-      '<div class="pipe-stage"><span class="pipe-stage-num">1</span><span class="pipe-stage-name">用户</span>' +
-        '<span class="pipe-stage-detail">w = [' + formatVec(p.user.weights) + '] · Top: ' + p.user.summary + '</span>' +
-        '<span class="pipe-stage-out">×' + p.user.weights.reduce((a,b)=>a+b,0).toFixed(2) + '</span></div>' +
-      '<div class="pipe-stage"><span class="pipe-stage-num">2</span><span class="pipe-stage-name">情境</span>' +
-        '<span class="pipe-stage-detail">urg=' + p.ctx.urgencyFactor.toFixed(2) + ' rev=' + p.ctx.reversibilityFactor.toFixed(2) +
-        ' scp=' + p.ctx.scopeFactor.toFixed(2) + ' reg=' + p.ctx.regretFactor.toFixed(2) +
-        ' emo=' + p.ctx.emotionFactor.toFixed(2) + ' cnf=' + p.ctx.conflictFactor.toFixed(2) +
-        ' inf=' + p.ctx.infoFactor.toFixed(2) + '</span>' +
-        '<span class="pipe-stage-out">×' + ctxComposite + '</span></div>' +
-      '<div class="pipe-stage"><span class="pipe-stage-num">3</span><span class="pipe-stage-name">选项</span>' +
-        '<span class="pipe-stage-detail">' + p.optsStage.valid.length + ' 有效 / ' + p.optsStage.totalCount + ' 候选 · ' + p.optsStage.fakeCount + ' 假</span>' +
-        '<span class="pipe-stage-out">' + p.optsStage.valid.length + ' 进入</span></div>' +
-      '<div class="pipe-stage"><span class="pipe-stage-num">4</span><span class="pipe-stage-name">算分</span>' +
-        '<span class="pipe-stage-detail">norm=' + p.sp.normalize + ' · unc=' + (p.sp.uncertaintyDisc*100).toFixed(0) + '% · tdisc=' + (p.sp.timeDisc*100).toFixed(0) + '%·yr</span>' +
-        '<span class="pipe-stage-out">' + (p.winner ? p.winner.maut.toFixed(2) : '—') + '</span></div>' +
-      '<div class="pipe-stage"><span class="pipe-stage-num">5</span><span class="pipe-stage-name">偏差</span>' +
-        '<span class="pipe-stage-detail">penalty=' + (p.bias.penalty*100).toFixed(1) + '% · audit=' + (p.bias.auditScore*100).toFixed(0) + '/100' + (p.bias.guardRail ? ' · GUARD_RAIL' : '') + '</span>' +
-        '<span class="pipe-stage-out">×' + (1 - p.bias.penalty * p.sim.noiseDiscount * 2).toFixed(3) + '</span></div>' +
-      '<div class="pipe-stage"><span class="pipe-stage-num">6</span><span class="pipe-stage-name">模拟器</span>' +
-        '<span class="pipe-stage-detail">tilt=' + (p.sim.futureTilt*100).toFixed(0) + '% · risk=' + (p.sim.riskTolerance*100).toFixed(0) + '% · floor=' + (p.sim.confFloor*100).toFixed(0) + '%</span>' +
-        '<span class="pipe-stage-out dim">扰动 ' + (p.sensitivity.stable ? '稳' : '翻') + '</span></div>' +
-      '<div class="pipe-stage"><span class="pipe-stage-num">7</span><span class="pipe-stage-name">输出</span>' +
+      '<div class="pipe-trace-label">这个结论怎么来的 · 七步</div>' +
+
+      '<div class="pipe-stage"><span class="pipe-stage-num">1</span><span class="pipe-stage-name">你最在乎啥</span>' +
+        '<span class="pipe-stage-detail">前三：' + userValueText + '</span>' +
+        '<span class="pipe-stage-out">权重已分配</span></div>' +
+
+      '<div class="pipe-stage"><span class="pipe-stage-num">2</span><span class="pipe-stage-name">这件事的处境</span>' +
+        '<span class="pipe-stage-detail">紧迫 / 可逆 / 范围 / 情绪 / 价值冲突 / 反悔代价 / 了解程度 综合算出一个修正</span>' +
+        '<span class="pipe-stage-out">' + ctxDirection + ctxPctText + '% ' + ctxLabel + '</span></div>' +
+
+      '<div class="pipe-stage"><span class="pipe-stage-num">3</span><span class="pipe-stage-name">在选什么</span>' +
+        '<span class="pipe-stage-detail">真候选 ' + p.optsStage.valid.length + ' 个 · 凑数的 ' + p.optsStage.fakeCount + ' 个被筛掉</span>' +
+        '<span class="pipe-stage-out">' + p.optsStage.valid.length + ' 个进比赛</span></div>' +
+
+      '<div class="pipe-stage"><span class="pipe-stage-num">4</span><span class="pipe-stage-name">原始打分</span>' +
+        '<span class="pipe-stage-detail">每个选项的 6 维分数 × 你的权重 = 原始分；按"' + p.sp.normalize + '"方式拉齐</span>' +
+        '<span class="pipe-stage-out">第一名原始 ' + (p.winner ? p.winner.maut.toFixed(2) : '—') + '</span></div>' +
+
+      '<div class="pipe-stage"><span class="pipe-stage-num">5</span><span class="pipe-stage-name">自检扣分</span>' +
+        '<span class="pipe-stage-detail">' + p.bias.warn + ' 道留意 · ' + p.bias.alert + ' 道警示 → 给最终分扣 ' + biasPct + '%' + (p.bias.guardRail ? ' · 警示太多，强制建议暂停' : '') + '</span>' +
+        '<span class="pipe-stage-out">−' + biasPct + '%</span></div>' +
+
+      '<div class="pipe-stage"><span class="pipe-stage-num">6</span><span class="pipe-stage-name">你拖的旋钮</span>' +
+        '<span class="pipe-stage-detail">' + simText + '</span>' +
+        '<span class="pipe-stage-out dim">' + (p.sensitivity.stable ? '小动一下不会翻' : '小动一下会翻 ⚠') + '</span></div>' +
+
+      '<div class="pipe-stage"><span class="pipe-stage-num">7</span><span class="pipe-stage-name">最终结论</span>' +
         '<span class="pipe-stage-detail">' + p.recommendation + '</span>' +
-        '<span class="pipe-stage-out">' + (p.winner ? p.winner.finalScore.toFixed(2) : '—') + '</span></div>' +
+        '<span class="pipe-stage-out">' + (p.winner ? p.winner.finalScore.toFixed(2) : '—') + ' 分</span></div>' +
+
       '<div class="pipe-formula">' +
-        '<span class="k">finalScore</span> = <span class="v">MAUT</span>(scores·w) × <span class="v">ctx</span> × (1−unc·(1−inf)) × <span class="v">e^(−td·yr)</span> × (1−penalty·noise) + <span class="v">tilt</span>·longTerm + <span class="v">risk</span>·flavor' +
-        '<br/><span class="k">confidence</span> = mean(ctxFill=' + (p.contrib.ctxCompletion*100).toFixed(0) +
-        '%, optClarity=' + (p.contrib.optsClarity*100).toFixed(0) +
-        '%, spread=' + (p.contrib.spreadConf*100).toFixed(0) +
-        '%, biasAudit=' + (p.contrib.biasAudit*100).toFixed(0) +
-        '%, actionReady=' + (p.contrib.actionReady*100).toFixed(0) + '%) = <span class="v">' + (p.confidence*100).toFixed(0) + '%</span>' +
+        '一句话说：<span class="v">第一名的最终分 = 你给它的 6 维原始分 × 你的价值权重 × 情境修正 × 信息折扣 × 时间折扣 × (1 − 自检扣分) + 旋钮加成</span>' +
+        '<br/>把握 = (情境填得多 ' + (p.contrib.ctxCompletion*100).toFixed(0) +
+        '% + 选项分得清 ' + (p.contrib.optsClarity*100).toFixed(0) +
+        '% + 头尾差距大 ' + (p.contrib.spreadConf*100).toFixed(0) +
+        '% + 自检过得多 ' + (p.contrib.biasAudit*100).toFixed(0) +
+        '% + 行动写得全 ' + (p.contrib.actionReady*100).toFixed(0) +
+        '%) ÷ 5 = <span class="v">' + (p.confidence*100).toFixed(0) + '%</span>' +
       '</div>' +
     '</div>';
   host.innerHTML = html;
@@ -1862,21 +1880,21 @@ function renderDecisionBanner(p) {
   const host = document.getElementById('decision-banner-host');
   if (!host) return;
   if (p.stage === 'no-options') {
-    host.innerHTML = '<div class="decision-banner"><div class="decision-sub">尚未在第三房间录入候选选项 — 算法暂无输入。</div></div>';
+    host.innerHTML = '<div class="decision-banner"><div class="decision-sub">还没法给建议——先去"关于选项"那里添几个选项并打分。</div></div>';
     return;
   }
-  const stabPill = '<span class="flip-indicator ' + (p.sensitivity.stable ? 'stable' : 'unstable') + '">' + (p.sensitivity.stable ? '权重扰动稳定' : '排名脆弱 · 扰动可翻') + '</span>';
+  const stabPill = '<span class="flip-indicator ' + (p.sensitivity.stable ? 'stable' : 'unstable') + '">' + (p.sensitivity.stable ? '小动一下不会翻' : '小动一下会翻 ⚠') + '</span>';
   host.innerHTML =
     '<div class="decision-banner">' +
-      '<div style="font-size: 10px; letter-spacing: 0.2em; color: var(--gold); text-transform: uppercase;">DECISION_OUTPUT · ' + new Date().toISOString().slice(0,10) + '</div>' +
-      '<div class="decision-winner">基于全部输入，<span class="highlight">' + (p.winner.letter + (p.winner.name ? ' · ' + p.winner.name : '')) + '</span>' + stabPill + '</div>' +
+      '<div style="font-size: 10px; letter-spacing: 0.2em; color: var(--gold); text-transform: uppercase;">系统给你的建议 · ' + new Date().toISOString().slice(0,10) + '</div>' +
+      '<div class="decision-winner">看下来，<span class="highlight">' + (p.winner.letter + (p.winner.name ? ' · ' + p.winner.name : '')) + '</span> 更适合你 ' + stabPill + '</div>' +
       '<div class="decision-sub">' + p.recommendation + '</div>' +
       '<div class="decision-actions">' +
-        '<div class="decision-stat"><span class="decision-stat-label">综合 (' + p.winner.letter + ')</span><span class="decision-stat-val">' + p.winner.finalScore.toFixed(2) + '</span></div>' +
-        '<div class="decision-stat"><span class="decision-stat-label">差距</span><span class="decision-stat-val">' + (p.gap >= 0 ? '+' : '') + p.gap.toFixed(2) + '</span></div>' +
-        '<div class="decision-stat"><span class="decision-stat-label">置信</span><span class="decision-stat-val ' + p.recColor + '">' + (p.confidence * 100).toFixed(0) + '%</span></div>' +
-        '<div class="decision-stat"><span class="decision-stat-label">偏差</span><span class="decision-stat-val ' + (p.bias.guardRail ? 'red' : p.bias.alert ? 'amber' : 'green') + '">' + (p.bias.warn + p.bias.alert) + '/' + p.bias.rated + '</span></div>' +
-        '<div class="decision-stat"><span class="decision-stat-label">推荐</span><span class="decision-stat-val ' + p.recColor + '">' + (p.recColor === 'green' ? '执行' : p.recColor === 'amber' ? '酝酿' : '暂停') + '</span></div>' +
+        '<div class="decision-stat"><span class="decision-stat-label">' + p.winner.letter + ' 的分</span><span class="decision-stat-val">' + p.winner.finalScore.toFixed(2) + '</span></div>' +
+        '<div class="decision-stat"><span class="decision-stat-label">跟第二名差</span><span class="decision-stat-val">' + (p.gap >= 0 ? '+' : '') + p.gap.toFixed(2) + '</span></div>' +
+        '<div class="decision-stat"><span class="decision-stat-label">把握有多大</span><span class="decision-stat-val ' + p.recColor + '">' + (p.confidence * 100).toFixed(0) + '%</span></div>' +
+        '<div class="decision-stat"><span class="decision-stat-label">自检触发</span><span class="decision-stat-val ' + (p.bias.guardRail ? 'red' : p.bias.alert ? 'amber' : 'green') + '">' + (p.bias.warn + p.bias.alert) + ' / ' + p.bias.rated + '</span></div>' +
+        '<div class="decision-stat"><span class="decision-stat-label">现在该</span><span class="decision-stat-val ' + p.recColor + '">' + (p.recColor === 'green' ? '行动' : p.recColor === 'amber' ? '再等等' : '暂停') + '</span></div>' +
       '</div>' +
     '</div>';
 }

@@ -46,32 +46,32 @@
 <h1 class="page-title serif">五 · 自检</h1>
 <p class="page-sub">五道偏差校验 · 检查你的倾向有多少是真正属于你的</p>
 
-<div class="section-bar"><div class="section-title">9 道偏差校验 · 实时合成 ID 卡</div><div class="section-meta">BIAS AUDIT · LIVE</div></div>
+<div class="section-bar"><div class="section-title">这真的是你想要的吗 · 9 个自检问题</div><div class="section-meta">自检</div></div>
 
 <div class="typo-layout" data-room-card="bias">
 
   <div class="typo-id-card">
-    <div class="typo-id-label">BIAS_AUDIT_CARD</div>
+    <div class="typo-id-label">自检结果卡</div>
     <div class="typo-id-name-row">
-      <span class="typo-id-name" style="cursor:default;">偏差体检</span>
-      <span class="typo-id-edit-hint">9 道</span>
+      <span class="typo-id-name" style="cursor:default;">是不是你真想要</span>
+      <span class="typo-id-edit-hint">9 个问题</span>
     </div>
     <div class="typo-id-grid">
-      <div class="typo-id-item" id="bias-rated"><div class="typo-id-item-label">已校验</div><div class="typo-id-item-val pending">0 / 9</div></div>
-      <div class="typo-id-item" id="bias-pass"><div class="typo-id-item-label">通过</div><div class="typo-id-item-val pending">未录</div></div>
-      <div class="typo-id-item" id="bias-warn"><div class="typo-id-item-label">注意</div><div class="typo-id-item-val pending">未录</div></div>
-      <div class="typo-id-item" id="bias-alert"><div class="typo-id-item-label">严重</div><div class="typo-id-item-val pending">未录</div></div>
-      <div class="typo-id-item" id="bias-top"><div class="typo-id-item-label">主要触发</div><div class="typo-id-item-val pending">未录</div></div>
-      <div class="typo-id-item" id="bias-score"><div class="typo-id-item-label">校验分</div><div class="typo-id-item-val pending">未录</div></div>
-      <div class="typo-id-item" id="bias-thresh"><div class="typo-id-item-label">触发阈值</div><div class="typo-id-item-val pending">未录</div></div>
-      <div class="typo-id-item" id="bias-evidence"><div class="typo-id-item-label">证据数</div><div class="typo-id-item-val pending">未录</div></div>
-      <div class="typo-id-item" id="bias-conf"><div class="typo-id-item-label">校验置信</div><div class="typo-id-item-val pending">未录</div></div>
-      <div class="typo-id-item" id="bias-recommend"><div class="typo-id-item-label">建议</div><div class="typo-id-item-val pending">未录</div></div>
-      <div class="typo-id-item" id="bias-fingerprint" style="grid-column: 1 / -1;"><div class="typo-id-item-label">偏差指纹</div><div class="typo-id-item-val pending mono" style="letter-spacing: 4px; font-style: normal;">·········</div></div>
+      <div class="typo-id-item" id="bias-rated"><div class="typo-id-item-label">答了几道</div><div class="typo-id-item-val pending">0 / 9</div></div>
+      <div class="typo-id-item" id="bias-pass"><div class="typo-id-item-label">没问题</div><div class="typo-id-item-val pending">没填</div></div>
+      <div class="typo-id-item" id="bias-warn"><div class="typo-id-item-label">留意</div><div class="typo-id-item-val pending">没填</div></div>
+      <div class="typo-id-item" id="bias-alert"><div class="typo-id-item-label">高警示</div><div class="typo-id-item-val pending">没填</div></div>
+      <div class="typo-id-item" id="bias-top"><div class="typo-id-item-label">主要触发</div><div class="typo-id-item-val pending">没填</div></div>
+      <div class="typo-id-item" id="bias-score"><div class="typo-id-item-label">自检得分</div><div class="typo-id-item-val pending">没填</div></div>
+      <div class="typo-id-item" id="bias-thresh"><div class="typo-id-item-label">提示宽松度</div><div class="typo-id-item-val pending">没填</div></div>
+      <div class="typo-id-item" id="bias-evidence"><div class="typo-id-item-label">写了几条原因</div><div class="typo-id-item-val pending">没填</div></div>
+      <div class="typo-id-item" id="bias-conf"><div class="typo-id-item-label">这结果可信吗</div><div class="typo-id-item-val pending">没填</div></div>
+      <div class="typo-id-item" id="bias-recommend"><div class="typo-id-item-label">建议</div><div class="typo-id-item-val pending">没填</div></div>
+      <div class="typo-id-item" id="bias-fingerprint" style="grid-column: 1 / -1;"><div class="typo-id-item-label">9 道一览（√ 通过 / ! 留意 / × 警示）</div><div class="typo-id-item-val pending mono" style="letter-spacing: 4px; font-style: normal;">·········</div></div>
     </div>
     <div class="typo-completion-bar"><div class="typo-completion-fill" id="bias-progress-fill" style="width: 0%;"></div></div>
     <div class="typo-id-footer">
-      <span>@六房间合成 · v1.0</span>
+      <span>每道问一下自己，按"没问题/留意/警示"标一下，旁边可补一句原因</span>
       <span class="num" id="bias-progress-val">0 / 11</span>
     </div>
   </div>
@@ -79,132 +79,132 @@
   <div class="typo-tests">
 
     <div class="typo-test">
-      <div class="typo-test-head"><div><div class="typo-test-name">9 道偏差状态 + 证据 <span class="typo-test-tag">三态 + 文本</span></div></div></div>
-      <div class="typo-test-hint">每道偏差给一个判断（通过 / 注意 / 严重），可补一句证据。</div>
+      <div class="typo-test-head"><div><div class="typo-test-name">9 个自检问题 <span class="typo-test-tag">3 选 1 + 可写一句话</span></div></div></div>
+      <div class="typo-test-hint">每个问题问问自己——选择背后是不是有这种隐藏推手？标 "没问题 / 留意 / 警示" 一下；后面可以写一句你看到的迹象。</div>
 
       <div class="bias-item">
         <div class="bias-head">
-          <span class="bias-name">直觉信号</span>
+          <span class="bias-name">身体反应在说什么</span>
           <div class="bias-toggle-row" data-bias-state="bias-intuition-state">
-            <span class="bias-state-chip" data-val="pass">通过</span>
-            <span class="bias-state-chip" data-val="warn">注意</span>
-            <span class="bias-state-chip" data-val="alert">严重</span>
+            <span class="bias-state-chip" data-val="pass">没问题</span>
+            <span class="bias-state-chip" data-val="warn">留意</span>
+            <span class="bias-state-chip" data-val="alert">警示</span>
           </div>
         </div>
-        <input type="text" class="bias-evidence text-input" data-text-key="bias-intuition-evidence" data-card="Bias" placeholder="身体反应 / 第一秒念头...">
+        <input type="text" class="bias-evidence text-input" data-text-key="bias-intuition-evidence" data-card="Bias" placeholder="想到这个选项时身体是松还是紧？第一念是什么...">
       </div>
 
       <div class="bias-item">
         <div class="bias-head">
-          <span class="bias-name">恐惧驱动</span>
+          <span class="bias-name">是不是在"躲避"什么</span>
           <div class="bias-toggle-row" data-bias-state="bias-fear-state">
-            <span class="bias-state-chip" data-val="pass">通过</span>
-            <span class="bias-state-chip" data-val="warn">注意</span>
-            <span class="bias-state-chip" data-val="alert">严重</span>
+            <span class="bias-state-chip" data-val="pass">没问题</span>
+            <span class="bias-state-chip" data-val="warn">留意</span>
+            <span class="bias-state-chip" data-val="alert">警示</span>
           </div>
         </div>
-        <input type="text" class="bias-evidence text-input" data-text-key="bias-fear-evidence" data-card="Bias" placeholder="在避免什么？...">
+        <input type="text" class="bias-evidence text-input" data-text-key="bias-fear-evidence" data-card="Bias" placeholder="不是为了得到 X，而是为了不要面对 Y...">
       </div>
 
       <div class="bias-item">
         <div class="bias-head">
-          <span class="bias-name">从众心理</span>
+          <span class="bias-name">是不是因为"别人都这样"</span>
           <div class="bias-toggle-row" data-bias-state="bias-conform-state">
-            <span class="bias-state-chip" data-val="pass">通过</span>
-            <span class="bias-state-chip" data-val="warn">注意</span>
-            <span class="bias-state-chip" data-val="alert">严重</span>
+            <span class="bias-state-chip" data-val="pass">没问题</span>
+            <span class="bias-state-chip" data-val="warn">留意</span>
+            <span class="bias-state-chip" data-val="alert">警示</span>
           </div>
         </div>
-        <input type="text" class="bias-evidence text-input" data-text-key="bias-conform-evidence" data-card="Bias" placeholder="参照群体倾向？...">
+        <input type="text" class="bias-evidence text-input" data-text-key="bias-conform-evidence" data-card="Bias" placeholder="同学/同事/朋友圈都在做这件事？...">
       </div>
 
       <div class="bias-item">
         <div class="bias-head">
-          <span class="bias-name">沉没成本</span>
+          <span class="bias-name">是不是不想"白投入了"</span>
           <div class="bias-toggle-row" data-bias-state="bias-sunk-state">
-            <span class="bias-state-chip" data-val="pass">通过</span>
-            <span class="bias-state-chip" data-val="warn">注意</span>
-            <span class="bias-state-chip" data-val="alert">严重</span>
+            <span class="bias-state-chip" data-val="pass">没问题</span>
+            <span class="bias-state-chip" data-val="warn">留意</span>
+            <span class="bias-state-chip" data-val="alert">警示</span>
           </div>
         </div>
-        <input type="text" class="bias-evidence text-input" data-text-key="bias-sunk-evidence" data-card="Bias" placeholder="已经投入 X，所以...">
+        <input type="text" class="bias-evidence text-input" data-text-key="bias-sunk-evidence" data-card="Bias" placeholder="已经投入了几年/几十万，所以...">
       </div>
 
       <div class="bias-item">
         <div class="bias-head">
-          <span class="bias-name">旧脚本</span>
+          <span class="bias-name">是不是童年/老剧本在作怪</span>
           <div class="bias-toggle-row" data-bias-state="bias-script-state">
-            <span class="bias-state-chip" data-val="pass">通过</span>
-            <span class="bias-state-chip" data-val="warn">注意</span>
-            <span class="bias-state-chip" data-val="alert">严重</span>
+            <span class="bias-state-chip" data-val="pass">没问题</span>
+            <span class="bias-state-chip" data-val="warn">留意</span>
+            <span class="bias-state-chip" data-val="alert">警示</span>
           </div>
         </div>
-        <input type="text" class="bias-evidence text-input" data-text-key="bias-script-evidence" data-card="Bias" placeholder="童年驱动力词...">
+        <input type="text" class="bias-evidence text-input" data-text-key="bias-script-evidence" data-card="Bias" placeholder="为了被认可？证明给谁看？...">
       </div>
 
       <div class="bias-item">
         <div class="bias-head">
-          <span class="bias-name">锚定效应</span>
+          <span class="bias-name">第一印象有没有"定锚"住你</span>
           <div class="bias-toggle-row" data-bias-state="bias-anchor-state">
-            <span class="bias-state-chip" data-val="pass">通过</span>
-            <span class="bias-state-chip" data-val="warn">注意</span>
-            <span class="bias-state-chip" data-val="alert">严重</span>
+            <span class="bias-state-chip" data-val="pass">没问题</span>
+            <span class="bias-state-chip" data-val="warn">留意</span>
+            <span class="bias-state-chip" data-val="alert">警示</span>
           </div>
         </div>
-        <input type="text" class="bias-evidence text-input" data-text-key="bias-anchor-evidence" data-card="Bias" placeholder="第一个看到的价格/方案/意见...">
+        <input type="text" class="bias-evidence text-input" data-text-key="bias-anchor-evidence" data-card="Bias" placeholder="第一个看到的价格/方案在脑里挥之不去...">
       </div>
 
       <div class="bias-item">
         <div class="bias-head">
-          <span class="bias-name">确认偏误</span>
+          <span class="bias-name">是不是只在找"支持你的证据"</span>
           <div class="bias-toggle-row" data-bias-state="bias-confirm-state">
-            <span class="bias-state-chip" data-val="pass">通过</span>
-            <span class="bias-state-chip" data-val="warn">注意</span>
-            <span class="bias-state-chip" data-val="alert">严重</span>
+            <span class="bias-state-chip" data-val="pass">没问题</span>
+            <span class="bias-state-chip" data-val="warn">留意</span>
+            <span class="bias-state-chip" data-val="alert">警示</span>
           </div>
         </div>
-        <input type="text" class="bias-evidence text-input" data-text-key="bias-confirm-evidence" data-card="Bias" placeholder="只在搜支持你结论的证据？...">
+        <input type="text" class="bias-evidence text-input" data-text-key="bias-confirm-evidence" data-card="Bias" placeholder="找了 5 个支持的，却没有去看 1 个反对的...">
       </div>
 
       <div class="bias-item">
         <div class="bias-head">
-          <span class="bias-name">损失厌恶</span>
+          <span class="bias-name">是不是"怕失去" &gt; "想得到"</span>
           <div class="bias-toggle-row" data-bias-state="bias-loss-state">
-            <span class="bias-state-chip" data-val="pass">通过</span>
-            <span class="bias-state-chip" data-val="warn">注意</span>
-            <span class="bias-state-chip" data-val="alert">严重</span>
+            <span class="bias-state-chip" data-val="pass">没问题</span>
+            <span class="bias-state-chip" data-val="warn">留意</span>
+            <span class="bias-state-chip" data-val="alert">警示</span>
           </div>
         </div>
-        <input type="text" class="bias-evidence text-input" data-text-key="bias-loss-evidence" data-card="Bias" placeholder="怕失去 X 远超对收益的兴奋？...">
+        <input type="text" class="bias-evidence text-input" data-text-key="bias-loss-evidence" data-card="Bias" placeholder="怕丢掉现在的 X 远比想要新的 Y 强烈...">
       </div>
 
       <div class="bias-item">
         <div class="bias-head">
-          <span class="bias-name">框架效应</span>
+          <span class="bias-name">问题是不是"被这样问"才有了这个答案</span>
           <div class="bias-toggle-row" data-bias-state="bias-frame-state">
-            <span class="bias-state-chip" data-val="pass">通过</span>
-            <span class="bias-state-chip" data-val="warn">注意</span>
-            <span class="bias-state-chip" data-val="alert">严重</span>
+            <span class="bias-state-chip" data-val="pass">没问题</span>
+            <span class="bias-state-chip" data-val="warn">留意</span>
+            <span class="bias-state-chip" data-val="alert">警示</span>
           </div>
         </div>
-        <input type="text" class="bias-evidence text-input" data-text-key="bias-frame-evidence" data-card="Bias" placeholder="问题措辞是否在偷偷引导？...">
+        <input type="text" class="bias-evidence text-input" data-text-key="bias-frame-evidence" data-card="Bias" placeholder="换种问法答案就不一样了吗？...">
       </div>
     </div>
 
     <div class="typo-test">
-      <div class="typo-test-head"><div><div class="typo-test-name">触发阈值 <span class="typo-test-tag">低/中/高</span></div></div></div>
-      <div class="param-row"><div><span class="param-label">校验的严格度</span><div class="param-label-explanation">低 = 更多提示，高 = 仅严重情况提示。</div></div><span class="param-val num" id="check-thresh-val">中</span></div>
+      <div class="typo-test-head"><div><div class="typo-test-name">提示宽松度 <span class="typo-test-tag">宽松 / 中等 / 严格</span></div></div></div>
+      <div class="param-row"><div><span class="param-label">系统什么时候才提醒你</span><div class="param-label-explanation">宽松 = 一点苗头就提醒；严格 = 只在很严重时提醒。</div></div><span class="param-val num" id="check-thresh-val">中</span></div>
       <input type="range" class="slider" min="1" max="3" value="2" step="1" data-target="check-thresh">
     </div>
 
     <div class="typo-test">
-      <div class="typo-test-head"><div><div class="typo-test-name">参照群体引力 <span class="typo-test-tag">推算</span></div></div></div>
-      <div class="typo-test-hint">为「从众心理」补充客观数据。</div>
+      <div class="typo-test-head"><div><div class="typo-test-name">你周围的人都偏向哪边 <span class="typo-test-tag">参考数据</span></div></div></div>
+      <div class="typo-test-hint">看到这些数据帮你判断"是不是因为别人都这样"。</div>
       <div style="display: grid; gap: 6px;">
-        <div style="display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 0.5px dashed var(--line); font-size: 11px;"><span>同班同学倾向</span><span class="num" style="color: var(--gold-deep);">85% A</span></div>
-        <div style="display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 0.5px dashed var(--line); font-size: 11px;"><span>同事倾向</span><span class="num" style="color: var(--gold-deep);">67% A</span></div>
-        <div style="display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 0.5px dashed var(--line); font-size: 11px;"><span>LinkedIn 联系人</span><span class="num" style="color: var(--gold-deep);">78% A</span></div>
-        <div style="display: flex; justify-content: space-between; padding: 6px 0; font-size: 11px;"><span>你近期转发内容</span><span class="num" style="color: var(--gold-deep);">62% B</span></div>
+        <div style="display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 0.5px dashed var(--line); font-size: 11px;"><span>同学</span><span class="num" style="color: var(--gold-deep);">85% 选 A</span></div>
+        <div style="display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 0.5px dashed var(--line); font-size: 11px;"><span>同事</span><span class="num" style="color: var(--gold-deep);">67% 选 A</span></div>
+        <div style="display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 0.5px dashed var(--line); font-size: 11px;"><span>常聊的人</span><span class="num" style="color: var(--gold-deep);">78% 选 A</span></div>
+        <div style="display: flex; justify-content: space-between; padding: 6px 0; font-size: 11px;"><span>你最近转发的内容</span><span class="num" style="color: var(--gold-deep);">62% 偏 B</span></div>
       </div>
     </div>
 

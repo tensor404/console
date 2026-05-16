@@ -94,11 +94,11 @@
   </div>
 </div>
 
-<div class="section-bar"><div class="section-title">实时旋钮 · 任意调整即刻刷新</div><div class="section-meta">LIVE KNOBS</div></div>
+<div class="section-bar"><div class="section-title">调一调这几个 · 看看结果怎么变</div><div class="section-meta">现场调节</div></div>
 <div class="card">
   <div class="param-grid">
     <div>
-      <div class="param-row"><div><span class="param-label">未来 vs 当下倾向</span><div class="param-label-explanation">滑向"未来"= 长期愿景权重↑；滑向"当下"= 短期稳定权重↑。</div></div></div>
+      <div class="param-row"><div><span class="param-label">你现在更想 为未来打算 还是 当下安稳</span><div class="param-label-explanation">拖向"未来"——长期价值（成长 / 深度）加分；拖向"当下"——短期稳定加分。</div></div></div>
       <div class="axis-block">
         <div class="axis-row" data-axis="sim-future-tilt">
           <span class="axis-letter left" data-side="L">当下</span>
@@ -107,46 +107,46 @@
           <span class="axis-pct">—</span>
         </div>
       </div>
-      <div class="param-row" style="margin-top: 18px;"><div><span class="param-label">风险容忍度</span><div class="param-label-explanation">高 = 接受高方差选项；低 = 优先稳态。</div></div></div>
+      <div class="param-row" style="margin-top: 18px;"><div><span class="param-label">你能承受多大的"不确定"</span><div class="param-label-explanation">越高越愿意冒险；越低越偏稳。</div></div></div>
       <div class="quad-bars">
-        <div class="quad-bar-row" data-quad="sim-risk-tolerance"><span class="quad-bar-label">RSK<span class="quad-bar-label-zh">%</span></span><div class="quad-bar-track"><div class="quad-bar-fill"></div></div><span class="quad-bar-val">—</span></div>
+        <div class="quad-bar-row" data-quad="sim-risk-tolerance"><span class="quad-bar-label">能冒险<span class="quad-bar-label-zh">%</span></span><div class="quad-bar-track"><div class="quad-bar-fill"></div></div><span class="quad-bar-val">—</span></div>
       </div>
     </div>
     <div>
-      <div class="param-row"><div><span class="param-label">噪音贴现强度</span><div class="param-label-explanation">校验触发的偏差对结论的折扣比例。</div></div></div>
+      <div class="param-row"><div><span class="param-label">自检问题在最后结果里占多少分</span><div class="param-label-explanation">越高 = 自检发现的"留意/警示"会让分数掉得越多。</div></div></div>
       <div class="quad-bars">
-        <div class="quad-bar-row" data-quad="sim-noise-discount"><span class="quad-bar-label">NSE<span class="quad-bar-label-zh">%</span></span><div class="quad-bar-track"><div class="quad-bar-fill"></div></div><span class="quad-bar-val">—</span></div>
+        <div class="quad-bar-row" data-quad="sim-noise-discount"><span class="quad-bar-label">自检权重<span class="quad-bar-label-zh">%</span></span><div class="quad-bar-track"><div class="quad-bar-fill"></div></div><span class="quad-bar-val">—</span></div>
       </div>
-      <div class="param-row" style="margin-top: 18px;"><div><span class="param-label">最低置信地板</span><div class="param-label-explanation">置信低于此阈值则建议「再等等」。</div></div></div>
+      <div class="param-row" style="margin-top: 18px;"><div><span class="param-label">至少要多有把握你才肯行动</span><div class="param-label-explanation">置信低于这个值，系统就建议你"再等等"。</div></div></div>
       <div class="quad-bars">
-        <div class="quad-bar-row" data-quad="sim-conf-floor"><span class="quad-bar-label">CFL<span class="quad-bar-label-zh">%</span></span><div class="quad-bar-track"><div class="quad-bar-fill"></div></div><span class="quad-bar-val">—</span></div>
+        <div class="quad-bar-row" data-quad="sim-conf-floor"><span class="quad-bar-label">底线<span class="quad-bar-label-zh">%</span></span><div class="quad-bar-track"><div class="quad-bar-fill"></div></div><span class="quad-bar-val">—</span></div>
       </div>
     </div>
   </div>
 </div>
 
-<div class="section-bar"><div class="section-title">决策管道追踪 · 7 层算法</div><div class="section-meta">PIPELINE TRACE</div></div>
+<div class="section-bar"><div class="section-title">这个结论怎么来的 · 七步看到底</div><div class="section-meta">算法过程</div></div>
 <div id="pipe-trace-host"></div>
 
-<div class="section-bar"><div class="section-title">实时决策卡 · 跨房间合成</div><div class="section-meta">LIVE_DECISION_CARD</div></div>
+<div class="section-bar"><div class="section-title">实时决策卡 · 跨房间合成</div><div class="section-meta">最终建议</div></div>
 <div class="typo-id-card" style="position: static;">
-  <div class="typo-id-label">LIVE_DECISION_CARD</div>
+  <div class="typo-id-label">最终建议</div>
   <div class="typo-id-name-row">
     <span class="typo-id-name" style="cursor:default;" id="sim-card-winner">B · 跨入新业务</span>
     <span class="typo-id-edit-hint">实时</span>
   </div>
   <div class="typo-id-grid">
-    <div class="typo-id-item"><div class="typo-id-item-label">A 综合</div><div class="typo-id-item-val" id="sim-card-a">5.9</div></div>
-    <div class="typo-id-item"><div class="typo-id-item-label">B 综合</div><div class="typo-id-item-val" id="sim-card-b">8.3</div></div>
-    <div class="typo-id-item"><div class="typo-id-item-label">差距</div><div class="typo-id-item-val" id="sim-card-gap">+2.4</div></div>
-    <div class="typo-id-item"><div class="typo-id-item-label">稳健度</div><div class="typo-id-item-val" id="sim-card-stab">高</div></div>
-    <div class="typo-id-item"><div class="typo-id-item-label">触发偏差</div><div class="typo-id-item-val" id="sim-card-bias">2 项</div></div>
-    <div class="typo-id-item"><div class="typo-id-item-label">建议动作</div><div class="typo-id-item-val" id="sim-card-rec">执行 B</div></div>
-    <div class="typo-id-item"><div class="typo-id-item-label">未来倾向</div><div class="typo-id-item-val" id="sim-card-tilt">—</div></div>
-    <div class="typo-id-item"><div class="typo-id-item-label">风险容忍</div><div class="typo-id-item-val" id="sim-card-risk">—</div></div>
+    <div class="typo-id-item"><div class="typo-id-item-label">第二名 得分</div><div class="typo-id-item-val" id="sim-card-a">—</div></div>
+    <div class="typo-id-item"><div class="typo-id-item-label">第一名 得分</div><div class="typo-id-item-val" id="sim-card-b">—</div></div>
+    <div class="typo-id-item"><div class="typo-id-item-label">差距</div><div class="typo-id-item-val" id="sim-card-gap">—</div></div>
+    <div class="typo-id-item"><div class="typo-id-item-label">小动一下会翻吗</div><div class="typo-id-item-val" id="sim-card-stab">—</div></div>
+    <div class="typo-id-item"><div class="typo-id-item-label">触发了几个自检</div><div class="typo-id-item-val" id="sim-card-bias">—</div></div>
+    <div class="typo-id-item"><div class="typo-id-item-label">系统建议</div><div class="typo-id-item-val" id="sim-card-rec">—</div></div>
+    <div class="typo-id-item"><div class="typo-id-item-label">未来 vs 当下</div><div class="typo-id-item-val" id="sim-card-tilt">—</div></div>
+    <div class="typo-id-item"><div class="typo-id-item-label">能冒险多少</div><div class="typo-id-item-val" id="sim-card-risk">—</div></div>
   </div>
   <div class="typo-id-footer">
-    <span>@六房间合成 · v1.0</span>
+    <span>所有数字实时跟着六个房间 + 这里的旋钮变</span>
     <span class="typo-id-badge serif">叙</span>
   </div>
 </div>

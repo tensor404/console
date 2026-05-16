@@ -46,7 +46,7 @@
 <h1 class="page-title serif">四 · 算分</h1>
 <p class="page-sub">个性化加权 · 不是通用利弊清单，是只属于你的标准</p>
 
-<div class="section-bar"><div class="section-title">评分矩阵 · 当前结果</div><div class="section-meta">SCORE MATRIX</div></div>
+<div class="section-bar"><div class="section-title">评分矩阵 · 6 维权重 + 元参数</div><div class="section-meta">SCORE MATRIX</div></div>
 
 <div class="viz-grid">
   <div class="option-card" id="r4-opt-a">
@@ -55,11 +55,9 @@
       <div class="option-score num" id="r4-score-a">5.9</div>
     </div>
     <div class="dim-chart-row"><span class="dim-chart-label">价值 · 成长</span><div class="dim-chart-bar-track"><div class="dim-chart-bar-fill" id="r4-bar-a-1" style="width: 45%;"></div></div><span class="dim-chart-val" id="r4-val-a-1">4.5</span><span style="font-size: 9px; color: var(--gold-deep);">×1.5</span></div>
-    <div class="dim-chart-row"><span class="dim-chart-label">价值 · 自主</span><div class="dim-chart-bar-track"><div class="dim-chart-bar-fill" style="width: 60%;"></div></div><span class="dim-chart-val">6.0</span><span style="font-size: 9px; color: var(--gold-deep);">×1.2</span></div>
     <div class="dim-chart-row"><span class="dim-chart-label">特质 · 开放性</span><div class="dim-chart-bar-track"><div class="dim-chart-bar-fill" id="r4-bar-a-2" style="width: 35%;"></div></div><span class="dim-chart-val" id="r4-val-a-2">3.5</span><span style="font-size: 9px; color: var(--gold-deep);">×1.2</span></div>
     <div class="dim-chart-row"><span class="dim-chart-label">能力 · 心流</span><div class="dim-chart-bar-track"><div class="dim-chart-bar-fill" id="r4-bar-a-3" style="width: 50%;"></div></div><span class="dim-chart-val" id="r4-val-a-3">5.0</span><span style="font-size: 9px; color: var(--muted);">×1.0</span></div>
     <div class="dim-chart-row"><span class="dim-chart-label">短期稳定</span><div class="dim-chart-bar-track"><div class="dim-chart-bar-fill" id="r4-bar-a-4" style="width: 88%;"></div></div><span class="dim-chart-val" id="r4-val-a-4">8.8</span><span style="font-size: 9px; color: var(--muted);">×0.7</span></div>
-    <div class="dim-chart-row"><span class="dim-chart-label">长期愿景</span><div class="dim-chart-bar-track"><div class="dim-chart-bar-fill" style="width: 55%;"></div></div><span class="dim-chart-val">5.5</span><span style="font-size: 9px; color: var(--gold-deep);">×1.2</span></div>
   </div>
 
   <div class="option-card winner" id="r4-opt-b">
@@ -68,41 +66,128 @@
       <div class="option-score num" id="r4-score-b">8.3</div>
     </div>
     <div class="dim-chart-row"><span class="dim-chart-label">价值 · 成长</span><div class="dim-chart-bar-track"><div class="dim-chart-bar-fill" id="r4-bar-b-1" style="width: 92%;"></div></div><span class="dim-chart-val" id="r4-val-b-1">9.2</span><span style="font-size: 9px; color: var(--gold-deep);">×1.5</span></div>
-    <div class="dim-chart-row"><span class="dim-chart-label">价值 · 自主</span><div class="dim-chart-bar-track"><div class="dim-chart-bar-fill" style="width: 85%;"></div></div><span class="dim-chart-val">8.5</span><span style="font-size: 9px; color: var(--gold-deep);">×1.2</span></div>
     <div class="dim-chart-row"><span class="dim-chart-label">特质 · 开放性</span><div class="dim-chart-bar-track"><div class="dim-chart-bar-fill" id="r4-bar-b-2" style="width: 95%;"></div></div><span class="dim-chart-val" id="r4-val-b-2">9.5</span><span style="font-size: 9px; color: var(--gold-deep);">×1.2</span></div>
     <div class="dim-chart-row"><span class="dim-chart-label">能力 · 心流</span><div class="dim-chart-bar-track"><div class="dim-chart-bar-fill" id="r4-bar-b-3" style="width: 80%;"></div></div><span class="dim-chart-val" id="r4-val-b-3">8.0</span><span style="font-size: 9px; color: var(--muted);">×1.0</span></div>
     <div class="dim-chart-row"><span class="dim-chart-label">短期稳定</span><div class="dim-chart-bar-track"><div class="dim-chart-bar-fill" id="r4-bar-b-4" style="width: 38%;"></div></div><span class="dim-chart-val" id="r4-val-b-4">3.8</span><span style="font-size: 9px; color: var(--muted);">×0.7</span></div>
-    <div class="dim-chart-row"><span class="dim-chart-label">长期愿景</span><div class="dim-chart-bar-track"><div class="dim-chart-bar-fill" style="width: 88%;"></div></div><span class="dim-chart-val">8.8</span><span style="font-size: 9px; color: var(--gold-deep);">×1.2</span></div>
   </div>
 </div>
 
-<div class="card">
-  <div class="card-head"><div class="card-title">权重分配 · 来自你的价值排序</div><div class="card-meta">WEIGHTS</div></div>
-  <div class="viz-vertical-bars">
-    <div class="viz-vbar"><span class="viz-vbar-val">1.5×</span><div class="viz-vbar-fill" style="height: 100%;"></div><span class="viz-vbar-label">Top 1<br/>成长</span></div>
-    <div class="viz-vbar"><span class="viz-vbar-val">1.2×</span><div class="viz-vbar-fill" style="height: 80%;"></div><span class="viz-vbar-label">Top 2-3<br/>自主/深度</span></div>
-    <div class="viz-vbar"><span class="viz-vbar-val">1.0×</span><div class="viz-vbar-fill" style="height: 66%;"></div><span class="viz-vbar-label">Top 4-5<br/>创造/真实</span></div>
-    <div class="viz-vbar"><span class="viz-vbar-val">0.7×</span><div class="viz-vbar-fill muted" style="height: 47%;"></div><span class="viz-vbar-label">其他<br/>5+</span></div>
-  </div>
-</div>
+<div class="typo-layout" data-room-card="score">
 
-<div class="section-bar"><div class="section-title">策略参数</div><div class="section-meta">STRATEGY</div></div>
-<div class="card">
-  <div class="param-grid">
-    <div>
-      <div class="param-row"><div><span class="param-label">Top 1 价值权重</span><div class="param-label-explanation">最在乎的那项价值在评分中的倍数。1.0 = 平权，2.0 = 完全主导。</div></div><span class="param-val num" id="top1-weight-val">1.50×</span></div>
-      <input type="range" class="slider" min="100" max="200" value="150" step="5" data-target="top1-weight">
-
-      <div class="param-row" style="margin-top: 20px;"><div><span class="param-label">Top 2-3 价值权重</span><div class="param-label-explanation">第二、第三重要的价值的倍数。</div></div><span class="param-val num" id="top23-weight-val">1.20×</span></div>
-      <input type="range" class="slider" min="100" max="180" value="120" step="5" data-target="top23-weight">
+  <div class="typo-id-card">
+    <div class="typo-id-label">SCORING_MATRIX_CARD</div>
+    <div class="typo-id-name-row">
+      <span class="typo-id-name" style="cursor:default;">个性化加权</span>
+      <span class="typo-id-edit-hint">同步</span>
     </div>
-    <div>
-      <div class="param-row"><div><span class="param-label">评估维度数量</span><div class="param-label-explanation">用几个维度评分。少 = 简洁，多 = 全面但难权衡。</div></div><span class="param-val num" id="score-dims-val">6</span></div>
-      <input type="range" class="slider" min="4" max="10" value="6" step="1" data-target="score-dims">
+    <div class="typo-id-grid">
+      <div class="typo-id-item" id="sc-top1"><div class="typo-id-item-label">Top1 价值</div><div class="typo-id-item-val pending">未录</div></div>
+      <div class="typo-id-item" id="sc-top2"><div class="typo-id-item-label">Top2 价值</div><div class="typo-id-item-val pending">未录</div></div>
+      <div class="typo-id-item" id="sc-top3"><div class="typo-id-item-label">Top3 价值</div><div class="typo-id-item-val pending">未录</div></div>
+      <div class="typo-id-item" id="sc-spread"><div class="typo-id-item-label">权重离散度</div><div class="typo-id-item-val pending">未录</div></div>
+      <div class="typo-id-item" id="sc-wsum"><div class="typo-id-item-label">总权重</div><div class="typo-id-item-val pending">未录</div></div>
+      <div class="typo-id-item" id="sc-dims"><div class="typo-id-item-label">评分维度</div><div class="typo-id-item-val pending">未录</div></div>
+      <div class="typo-id-item" id="sc-normalize"><div class="typo-id-item-label">标准化</div><div class="typo-id-item-val pending">未录</div></div>
+      <div class="typo-id-item" id="sc-threshold"><div class="typo-id-item-label">显著阈值</div><div class="typo-id-item-val pending">未录</div></div>
+      <div class="typo-id-item" id="sc-prob"><div class="typo-id-item-label">概率视角</div><div class="typo-id-item-val pending">未录</div></div>
+      <div class="typo-id-item" id="sc-uncertain"><div class="typo-id-item-label">不确定贴现</div><div class="typo-id-item-val pending">未录</div></div>
+      <div class="typo-id-item" id="sc-time"><div class="typo-id-item-label">时间贴现</div><div class="typo-id-item-val pending">未录</div></div>
+      <div class="typo-id-item" id="sc-self"><div class="typo-id-item-label">自报权重</div><div class="typo-id-item-val pending">未录</div></div>
+      <div class="typo-id-item" id="sc-sens"><div class="typo-id-item-label">敏感度</div><div class="typo-id-item-val pending">未录</div></div>
+    </div>
+    <div class="typo-completion-bar"><div class="typo-completion-fill" id="sc-progress-fill" style="width: 0%;"></div></div>
+    <div class="typo-id-footer">
+      <span>@六房间合成 · v1.0</span>
+      <span class="num" id="sc-progress-val">0 / 13</span>
+    </div>
+  </div>
 
-      <div class="param-row" style="margin-top: 20px;"><div><span class="param-label">敏感度分析灵敏</span><div class="param-label-explanation">扰动测试的强度。高 = 更容易标记"结论不稳健"。</div></div><span class="param-val num" id="sens-level-val">中</span></div>
+  <div class="typo-tests">
+
+    <div class="typo-test">
+      <div class="typo-test-head"><div><div class="typo-test-name">6 维价值权重 <span class="typo-test-tag">0-200%</span></div></div></div>
+      <div class="typo-test-hint">每个维度的相对重要性。可任意配比。</div>
+      <div class="quad-bars">
+        <div class="quad-bar-row" data-quad="w-growth" data-max="200"><span class="quad-bar-label">成长<span class="quad-bar-label-zh">growth</span></span><div class="quad-bar-track"><div class="quad-bar-fill"></div></div><span class="quad-bar-val">—</span></div>
+        <div class="quad-bar-row" data-quad="w-autonomy" data-max="200"><span class="quad-bar-label">自主<span class="quad-bar-label-zh">auto</span></span><div class="quad-bar-track"><div class="quad-bar-fill"></div></div><span class="quad-bar-val">—</span></div>
+        <div class="quad-bar-row" data-quad="w-depth" data-max="200"><span class="quad-bar-label">深度<span class="quad-bar-label-zh">depth</span></span><div class="quad-bar-track"><div class="quad-bar-fill"></div></div><span class="quad-bar-val">—</span></div>
+        <div class="quad-bar-row" data-quad="w-create" data-max="200"><span class="quad-bar-label">创造<span class="quad-bar-label-zh">create</span></span><div class="quad-bar-track"><div class="quad-bar-fill"></div></div><span class="quad-bar-val">—</span></div>
+        <div class="quad-bar-row" data-quad="w-real" data-max="200"><span class="quad-bar-label">真实<span class="quad-bar-label-zh">real</span></span><div class="quad-bar-track"><div class="quad-bar-fill"></div></div><span class="quad-bar-val">—</span></div>
+        <div class="quad-bar-row" data-quad="w-stability" data-max="200"><span class="quad-bar-label">稳定<span class="quad-bar-label-zh">stab</span></span><div class="quad-bar-track"><div class="quad-bar-fill"></div></div><span class="quad-bar-val">—</span></div>
+      </div>
+    </div>
+
+    <div class="typo-test">
+      <div class="typo-test-head"><div><div class="typo-test-name">评估维度数 <span class="typo-test-tag">4-10</span></div></div></div>
+      <div class="param-row"><div><span class="param-label">用几个维度评分</span><div class="param-label-explanation">少 = 简洁，多 = 全面但难权衡。</div></div><span class="param-val num" id="score-dims-val">6</span></div>
+      <input type="range" class="slider" min="4" max="10" value="6" step="1" data-target="score-dims">
+    </div>
+
+    <div class="typo-test">
+      <div class="typo-test-head"><div><div class="typo-test-name">标准化方式 <span class="typo-test-tag">单选</span></div></div></div>
+      <div class="chip-row" data-pick-single="sc-normalize">
+        <div class="chip" data-val="min-max">min-max · 端点对齐</div>
+        <div class="chip" data-val="z-score">z-score · 偏离均值</div>
+        <div class="chip" data-val="percentile">percentile · 排序百分位</div>
+        <div class="chip" data-val="原始">原始 · 不标准化</div>
+      </div>
+    </div>
+
+    <div class="typo-test">
+      <div class="typo-test-head"><div><div class="typo-test-name">显著差距阈值 <span class="typo-test-tag">差距 ≥</span></div></div></div>
+      <div class="typo-test-hint">两个选项的得分差距大于多少才算"显著决出胜负"。</div>
+      <div class="quad-bars">
+        <div class="quad-bar-row" data-quad="sc-threshold" data-max="5"><span class="quad-bar-label">GAP<span class="quad-bar-label-zh">pt</span></span><div class="quad-bar-track"><div class="quad-bar-fill"></div></div><span class="quad-bar-val">—</span></div>
+      </div>
+    </div>
+
+    <div class="typo-test">
+      <div class="typo-test-head"><div><div class="typo-test-name">概率视角 <span class="typo-test-tag">点估计 vs 期望值</span></div></div></div>
+      <div class="chip-row" data-pick-single="sc-prob-weight">
+        <div class="chip" data-val="期望值">期望值（默认）</div>
+        <div class="chip" data-val="加入概率">加入概率分布</div>
+        <div class="chip" data-val="蒙特卡洛">蒙特卡洛模拟</div>
+      </div>
+    </div>
+
+    <div class="typo-test">
+      <div class="typo-test-head"><div><div class="typo-test-name">不确定性贴现 <span class="typo-test-tag">0-50%</span></div></div></div>
+      <div class="typo-test-hint">高不确定选项额外打折的比例。</div>
+      <div class="quad-bars">
+        <div class="quad-bar-row" data-quad="sc-uncertainty-discount" data-max="50"><span class="quad-bar-label">UNC<span class="quad-bar-label-zh">%off</span></span><div class="quad-bar-track"><div class="quad-bar-fill"></div></div><span class="quad-bar-val">—</span></div>
+      </div>
+    </div>
+
+    <div class="typo-test">
+      <div class="typo-test-head"><div><div class="typo-test-name">时间贴现率 <span class="typo-test-tag">0-30% / 年</span></div></div></div>
+      <div class="typo-test-hint">远期收益相对近期被折现的速度。</div>
+      <div class="quad-bars">
+        <div class="quad-bar-row" data-quad="sc-time-discount" data-max="30"><span class="quad-bar-label">TIM<span class="quad-bar-label-zh">%</span></span><div class="quad-bar-track"><div class="quad-bar-fill"></div></div><span class="quad-bar-val">—</span></div>
+      </div>
+    </div>
+
+    <div class="typo-test">
+      <div class="typo-test-head"><div><div class="typo-test-name">自报 vs 行为权重 <span class="typo-test-tag">0-100%</span></div></div></div>
+      <div class="typo-test-hint">"你说的"占多少 vs "你做的"占多少。50 = 各半。</div>
+      <div class="quad-bars">
+        <div class="quad-bar-row" data-quad="sc-self-report-weight"><span class="quad-bar-label">SAY<span class="quad-bar-label-zh">%自报</span></span><div class="quad-bar-track"><div class="quad-bar-fill"></div></div><span class="quad-bar-val">—</span></div>
+      </div>
+    </div>
+
+    <div class="typo-test">
+      <div class="typo-test-head"><div><div class="typo-test-name">敏感度分析灵敏 <span class="typo-test-tag">扰动测试</span></div></div></div>
+      <div class="param-row"><div><span class="param-label">扰动强度</span><div class="param-label-explanation">高 = 更容易标记"结论不稳健"。</div></div><span class="param-val num" id="sens-level-val">中</span></div>
       <input type="range" class="slider" min="1" max="3" value="2" step="1" data-target="sens-level">
     </div>
+
+    <div class="typo-test">
+      <div class="typo-test-head"><div><div class="typo-test-name">Top 1 / Top 2-3 加成 <span class="typo-test-tag">价值排序倍数</span></div></div></div>
+      <div class="param-row"><div><span class="param-label">Top 1 倍数</span></div><span class="param-val num" id="top1-weight-val">1.50×</span></div>
+      <input type="range" class="slider" min="100" max="200" value="150" step="5" data-target="top1-weight">
+      <div class="param-row" style="margin-top: 16px;"><div><span class="param-label">Top 2-3 倍数</span></div><span class="param-val num" id="top23-weight-val">1.20×</span></div>
+      <input type="range" class="slider" min="100" max="180" value="120" step="5" data-target="top23-weight">
+    </div>
+
   </div>
 </div>
 

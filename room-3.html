@@ -46,68 +46,151 @@
 <h1 class="page-title serif">三 · 关于选项</h1>
 <p class="page-sub">选项真假甄别 · 你列的可能本身就错了</p>
 
-<div class="section-bar"><div class="section-title">候选选项 · 当前清单</div><div class="section-meta">OPTIONS LIST</div></div>
+<div class="section-bar"><div class="section-title">选项法证 · 实时合成 ID 卡</div><div class="section-meta">OPTIONS · LIVE FORENSICS</div></div>
 
-<div class="card">
-  <div class="option-card">
-    <div class="option-head-row">
-      <div><div class="option-name">A · 继续深耕原产品线</div><div class="option-sub">3 年内成为细分赛道专家</div></div>
-      <span class="pill green">真选项</span>
-    </div>
-    <div style="font-size: 11px; color: var(--ink-muted); line-height: 1.7;">价值对齐 · 部分 · 与"成长"中等对齐<br/>能力可行 · 高 · 现有能力 95% 直接复用</div>
-  </div>
-  <div class="option-card winner">
-    <div class="option-head-row">
-      <div><div class="option-name">B · 跨入 AI 新业务</div><div class="option-sub">从零搭建 · 三年内成败未知</div></div>
-      <span class="pill green">真选项</span>
-    </div>
-    <div style="font-size: 11px; color: var(--ink-muted); line-height: 1.7;">价值对齐 · 高 · 与"成长 / 自主 / 创造"全面对齐<br/>能力可行 · 中 · 60% 可迁移 · 需补 AI 领域</div>
-  </div>
-</div>
+<div class="typo-layout" data-room-card="opts">
 
-<div class="card">
-  <div class="card-head"><div class="card-title">系统质询 · 反向探测</div><div class="card-meta">PROBE LOG</div></div>
-  <div style="font-size: 12px; line-height: 1.8;">
-    <div style="padding: 12px 0; border-bottom: 0.5px dashed var(--line);">
-      <span class="subsection-label" style="margin-bottom: 6px;">Q1 · 是否漏掉选项</span>
-      <div style="font-family: 'Noto Serif SC', serif; font-style: italic; color: var(--ink); margin-bottom: 6px;">"如果完全不管别人怎么看，你会怎么做？"</div>
-      <div style="color: var(--ink-muted);">用户回应：<strong style="color: var(--ink);">B</strong> · 一致 · 排除"为父母选 A"的可能</div>
+  <div class="typo-id-card">
+    <div class="typo-id-label">OPTIONS_FORENSICS_CARD</div>
+    <div class="typo-id-name-row">
+      <span class="typo-id-name" style="cursor:default;">候选清单</span>
+      <span class="typo-id-edit-hint">动态</span>
     </div>
-    <div style="padding: 12px 0; border-bottom: 0.5px dashed var(--line);">
-      <span class="subsection-label" style="margin-bottom: 6px;">Q2 · 二元框架检查</span>
-      <div style="font-family: 'Noto Serif SC', serif; font-style: italic; color: var(--ink); margin-bottom: 6px;">"A 和 B 之间有没有第三种可能？"</div>
-      <div style="color: var(--ink-muted);">用户回应：<strong style="color: var(--ink);">C · 谈判争取 A 部门内启动 AI 子项目</strong> · 已并入清单待确认</div>
+    <div class="typo-id-grid">
+      <div class="typo-id-item" id="opt-count"><div class="typo-id-item-label">候选总数</div><div class="typo-id-item-val pending">未录</div></div>
+      <div class="typo-id-item" id="opt-truth"><div class="typo-id-item-label">真选项</div><div class="typo-id-item-val pending">未录</div></div>
+      <div class="typo-id-item" id="opt-fake"><div class="typo-id-item-label">假选项</div><div class="typo-id-item-val pending">未录</div></div>
+      <div class="typo-id-item" id="opt-undet"><div class="typo-id-item-label">待判定</div><div class="typo-id-item-val pending">未录</div></div>
+      <div class="typo-id-item" id="opt-binary"><div class="typo-id-item-label">二元跳出</div><div class="typo-id-item-val pending">未录</div></div>
+      <div class="typo-id-item" id="opt-frame"><div class="typo-id-item-label">框架重组</div><div class="typo-id-item-val pending">未录</div></div>
+      <div class="typo-id-item" id="opt-sh-info"><div class="typo-id-item-label">利益方诉求</div><div class="typo-id-item-val pending">未录</div></div>
+      <div class="typo-id-item" id="opt-hidden"><div class="typo-id-item-label">隐藏选项</div><div class="typo-id-item-val pending">未录</div></div>
+      <div class="typo-id-item" id="opt-sunk"><div class="typo-id-item-label">沉没成本陷阱</div><div class="typo-id-item-val pending">未录</div></div>
+      <div class="typo-id-item" id="opt-indep"><div class="typo-id-item-label">选项独立性</div><div class="typo-id-item-val pending">未录</div></div>
+      <div class="typo-id-item" id="opt-compar"><div class="typo-id-item-label">可比性</div><div class="typo-id-item-val pending">未录</div></div>
+      <div class="typo-id-item" id="opt-third"><div class="typo-id-item-label">第三选项</div><div class="typo-id-item-val pending">未录</div></div>
+      <div class="typo-id-item" id="opt-conf"><div class="typo-id-item-label">清单置信</div><div class="typo-id-item-val pending">未录</div></div>
+      <div class="typo-id-item" id="opt-cmpcost"><div class="typo-id-item-label">比较代价</div><div class="typo-id-item-val pending">未录</div></div>
     </div>
-    <div style="padding: 12px 0;">
-      <span class="subsection-label" style="margin-bottom: 6px;">Q3 · 假选项识别</span>
-      <div style="font-family: 'Noto Serif SC', serif; font-style: italic; color: var(--ink); margin-bottom: 6px;">"列的选项中，哪个其实是'应该考虑'才列的？"</div>
-      <div style="color: var(--ink-muted);">用户回应：<strong style="color: var(--ink);">无</strong> · 两个选项都是真实在考虑</div>
+    <div class="typo-completion-bar"><div class="typo-completion-fill" id="opt-progress-fill" style="width: 0%;"></div></div>
+    <div class="typo-id-footer">
+      <span>@六房间合成 · v1.0</span>
+      <span class="num" id="opt-progress-val">0 / 14</span>
     </div>
   </div>
-</div>
 
-<div class="section-bar"><div class="section-title">策略参数</div><div class="section-meta">STRATEGY</div></div>
+  <div class="typo-tests">
 
-<div class="card">
-  <div class="param-grid">
-    <div>
-      <div class="param-row">
-        <div><span class="param-label">假选项识别敏感度</span><div class="param-label-explanation">高 = 更多选项被标记为"可能是假选项"，低 = 不质疑用户提交。</div></div>
-        <span class="param-val num" id="fake-sens-val">中</span>
+    <div class="typo-test">
+      <div class="typo-test-head"><div><div class="typo-test-name">候选选项清单 <span class="typo-test-tag">添加 · 真假标记</span></div></div></div>
+      <div class="typo-test-hint">点击"真选项 / 假选项"标签可三态切换：真 → 假 → 未判定。</div>
+      <div class="opt-list" id="opt-list-host"></div>
+    </div>
+
+    <div class="typo-test">
+      <div class="typo-test-head"><div><div class="typo-test-name">二元框架跳出 <span class="typo-test-tag">第三种可能数</span></div></div></div>
+      <div class="typo-test-hint">"如果 A 和 B 之间有第三种可能" — 想到几个？</div>
+      <div style="display: flex; align-items: center; gap: 16px;">
+        <div class="counter" data-counter="opt-binary-found" data-min="0" data-max="10">
+          <button class="counter-btn" data-act="dec">−</button>
+          <div class="counter-val">—</div>
+          <button class="counter-btn" data-act="inc">+</button>
+        </div>
       </div>
-      <input type="range" class="slider" min="1" max="3" value="2" step="1" data-target="fake-sens">
+    </div>
 
-      <div class="param-row" style="margin-top: 20px;">
-        <div><span class="param-label">主动质询次数</span><div class="param-label-explanation">系统主动反向追问的次数。0 = 不质询，5 = 最多 5 个反向问题。</div></div>
-        <span class="param-val num" id="probe-count-val">3</span>
+    <div class="typo-test">
+      <div class="typo-test-head"><div><div class="typo-test-name">框架重组 <span class="typo-test-tag">单选</span></div></div></div>
+      <div class="typo-test-hint">是否考虑用其他动作重构问题？</div>
+      <div class="chip-row" data-pick-single="opt-frame">
+        <div class="chip" data-val="默认">默认两个</div>
+        <div class="chip" data-val="拖时">拖时</div>
+        <div class="chip" data-val="拆分">拆分</div>
+        <div class="chip" data-val="合并">合并</div>
+        <div class="chip" data-val="取消">取消</div>
+        <div class="chip" data-val="谈判">谈判</div>
       </div>
-      <input type="range" class="slider" min="0" max="5" value="3" step="1" data-target="probe-count">
     </div>
-    <div>
-      <div class="toggle-row"><div><span class="param-label">二元框架自动破解</span><div class="param-label-explanation">检测"要么 A 要么 B"语言，主动提示寻找第三选项。</div></div><div class="toggle on" data-toggle="binary-break"></div></div>
-      <div class="toggle-row"><div><span class="param-label">隐藏选项探测</span><div class="param-label-explanation">基于愿景数据推算用户可能漏掉的选项。</div></div><div class="toggle on" data-toggle="hidden-probe"></div></div>
-      <div class="toggle-row"><div><span class="param-label">价值冲突预警</span><div class="param-label-explanation">选项与 Top 5 价值全部冲突时主动质疑。</div></div><div class="toggle on" data-toggle="value-conflict"></div></div>
+
+    <div class="typo-test">
+      <div class="typo-test-head"><div><div class="typo-test-name">利益方诉求 <span class="typo-test-tag">已知程度</span></div></div></div>
+      <div class="chip-row" data-pick-single="opt-stakeholder-info">
+        <div class="chip" data-val="已完全了解">已完全了解</div>
+        <div class="chip" data-val="部分了解">部分了解</div>
+        <div class="chip" data-val="模糊">模糊</div>
+        <div class="chip" data-val="未询问">未询问</div>
+        <div class="chip" data-val="不适用">不适用</div>
+      </div>
     </div>
+
+    <div class="typo-test">
+      <div class="typo-test-head"><div><div class="typo-test-name">隐藏选项探测 <span class="typo-test-tag">+ 说明</span></div></div></div>
+      <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 8px;">
+        <div class="counter" data-counter="opt-hidden-count" data-min="0" data-max="10">
+          <button class="counter-btn" data-act="dec">−</button>
+          <div class="counter-val">—</div>
+          <button class="counter-btn" data-act="inc">+</button>
+        </div>
+        <span style="font-size: 11px; color: var(--muted);">愿景数据推算的盲区数</span>
+      </div>
+      <textarea class="textarea-input" data-text-key="opt-hidden-note" data-card="Opts" placeholder="若有，简述这些隐藏选项的方向..."></textarea>
+    </div>
+
+    <div class="typo-test">
+      <div class="typo-test-head"><div><div class="typo-test-name">沉没成本陷阱 <span class="typo-test-tag">严重度</span></div></div></div>
+      <div class="severity-row" data-severity="opt-sunk-severity">
+        <span class="severity-label">"不想浪费过去"对选项推动的强度</span>
+        <span class="severity-dots">
+          <span class="severity-dot"></span>
+          <span class="severity-dot"></span>
+          <span class="severity-dot"></span>
+          <span class="severity-dot"></span>
+        </span>
+      </div>
+    </div>
+
+    <div class="typo-test">
+      <div class="typo-test-head"><div><div class="typo-test-name">选项独立性 <span class="typo-test-tag">0-100%</span></div></div></div>
+      <div class="typo-test-hint">选项之间是否真正互斥/独立，越高越独立。</div>
+      <div class="quad-bars">
+        <div class="quad-bar-row" data-quad="opt-independence"><span class="quad-bar-label">IND<span class="quad-bar-label-zh">独立</span></span><div class="quad-bar-track"><div class="quad-bar-fill"></div></div><span class="quad-bar-val">—</span></div>
+      </div>
+    </div>
+
+    <div class="typo-test">
+      <div class="typo-test-head"><div><div class="typo-test-name">可比性 <span class="typo-test-tag">0-100%</span></div></div></div>
+      <div class="typo-test-hint">是否在同一颗粒度/维度上可以正当对比。</div>
+      <div class="quad-bars">
+        <div class="quad-bar-row" data-quad="opt-comparable"><span class="quad-bar-label">CMP<span class="quad-bar-label-zh">可比</span></span><div class="quad-bar-track"><div class="quad-bar-fill"></div></div><span class="quad-bar-val">—</span></div>
+      </div>
+    </div>
+
+    <div class="typo-test">
+      <div class="typo-test-head"><div><div class="typo-test-name">第三选项浮现 <span class="typo-test-tag">单选</span></div></div></div>
+      <div class="chip-row" data-pick-single="opt-third-found">
+        <div class="chip" data-val="未尝试">未尝试</div>
+        <div class="chip" data-val="尝试无果">尝试无果</div>
+        <div class="chip" data-val="浮现待评估">浮现待评估</div>
+        <div class="chip" data-val="已发现">已发现</div>
+      </div>
+    </div>
+
+    <div class="typo-test">
+      <div class="typo-test-head"><div><div class="typo-test-name">清单置信 <span class="typo-test-tag">0-100%</span></div></div></div>
+      <div class="typo-test-hint">你对当前清单"已经覆盖到该考虑的"的把握。</div>
+      <div class="quad-bars">
+        <div class="quad-bar-row" data-quad="opt-confidence"><span class="quad-bar-label">CFN<span class="quad-bar-label-zh">置信</span></span><div class="quad-bar-track"><div class="quad-bar-fill"></div></div><span class="quad-bar-val">—</span></div>
+      </div>
+    </div>
+
+    <div class="typo-test">
+      <div class="typo-test-head"><div><div class="typo-test-name">比较代价 <span class="typo-test-tag">0-100%</span></div></div></div>
+      <div class="typo-test-hint">认真做完比较所需的研究/试探/沟通成本。</div>
+      <div class="quad-bars">
+        <div class="quad-bar-row" data-quad="opt-compare-cost"><span class="quad-bar-label">CST<span class="quad-bar-label-zh">代价</span></span><div class="quad-bar-track"><div class="quad-bar-fill"></div></div><span class="quad-bar-val">—</span></div>
+      </div>
+    </div>
+
   </div>
 </div>
 

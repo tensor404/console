@@ -46,109 +46,168 @@
 <h1 class="page-title serif">五 · 自检</h1>
 <p class="page-sub">五道偏差校验 · 检查你的倾向有多少是真正属于你的</p>
 
-<div class="section-bar"><div class="section-title">校验报告 · 五道偏差</div><div class="section-meta">BIAS CHECKS</div></div>
+<div class="section-bar"><div class="section-title">9 道偏差校验 · 实时合成 ID 卡</div><div class="section-meta">BIAS AUDIT · LIVE</div></div>
 
-<div class="card">
-  <div class="check-item" id="r5-check-1">
-    <div class="check-icon warn">!</div>
-    <div class="check-content">
-      <div class="check-name">恐惧驱动校验</div>
-      <div class="check-desc">倾向 A 部分动机来自核心恐惧"让父母失望"。父母价值脚本里稳定 = 安全，但你愿景画布写过：你要的不是父母想要的生活。</div>
-      <div class="check-tag">⚠ 中度影响 · 部分倾向来自外部期待</div>
-    </div>
-  </div>
-  <div class="check-item" id="r5-check-2">
-    <div class="check-icon warn">!</div>
-    <div class="check-content">
-      <div class="check-name">从众心理校验</div>
-      <div class="check-desc">参照群体数据：你的同班同学 85% 在 A 类路径。LinkedIn 浏览历史里高频出现的人 78% 走 A 路径。社会比较是隐形引力。</div>
-      <div class="check-tag">⚠ 显著影响 · 参照群体偏向 A</div>
-    </div>
-  </div>
-  <div class="check-item" id="r5-check-3">
-    <div class="check-icon ok">✓</div>
-    <div class="check-content">
-      <div class="check-name">沉没成本校验</div>
-      <div class="check-desc">过去 3 年的能力积累在 B 选项中 60% 可迁移。沉没成本对当前倾向影响有限。</div>
-      <div class="check-tag">影响有限 · 通过</div>
-    </div>
-  </div>
-  <div class="check-item" id="r5-check-4">
-    <div class="check-icon ok">✓</div>
-    <div class="check-content">
-      <div class="check-name">直觉信号校验</div>
-      <div class="check-desc">身体扫描：想到 A 胸口/肩膀紧绷度 3-4，想到 B 兴奋型紧张度 2-2。理性算分（B 高）+ 身体反应（B 松）+ 价值数据（B 对齐）三方一致。</div>
-      <div class="check-tag">★ 罕见强信号 · 三方一致</div>
-    </div>
-  </div>
-  <div class="check-item" id="r5-check-5">
-    <div class="check-icon ok">✓</div>
-    <div class="check-content">
-      <div class="check-name">旧脚本校验</div>
-      <div class="check-desc">决策动机词分析：当前动机"创造 / 探索 / 不被困住"来自成年期愿景，未匹配到童年驱动力库的"被认可 / 证明 / 被爱"。</div>
-      <div class="check-tag">通过 · 当下动机非童年脚本</div>
-    </div>
-  </div>
-</div>
+<div class="typo-layout" data-room-card="bias">
 
-<div class="viz-grid">
-  <div class="viz-card">
-    <div class="card-head" style="margin-bottom: 8px; padding-bottom: 8px;"><div class="card-title">身体扫描 · 详细数据</div><div class="card-meta">BODY SCAN</div></div>
-    <div style="display: grid; grid-template-columns: 80px 1fr 1fr; gap: 12px; align-items: center; font-size: 11px;">
-      <span style="color: var(--muted);"></span>
-      <span style="color: var(--gold-deep); font-weight: 500; text-align: center;">A · 深耕</span>
-      <span style="color: var(--gold-deep); font-weight: 500; text-align: center;">B · 跨入</span>
+  <div class="typo-id-card">
+    <div class="typo-id-label">BIAS_AUDIT_CARD</div>
+    <div class="typo-id-name-row">
+      <span class="typo-id-name" style="cursor:default;">偏差体检</span>
+      <span class="typo-id-edit-hint">9 道</span>
     </div>
-    <div style="display: grid; grid-template-columns: 80px 1fr 1fr; gap: 12px; align-items: center; font-size: 11px; padding: 8px 0; border-bottom: 0.5px dashed var(--line); margin-top: 8px;">
-      <span style="color: var(--ink-muted);">胸口</span>
-      <span class="num" style="text-align: center; color: var(--red);">紧 3/5</span>
-      <span class="num" style="text-align: center; color: var(--green);">松 2/5</span>
+    <div class="typo-id-grid">
+      <div class="typo-id-item" id="bias-rated"><div class="typo-id-item-label">已校验</div><div class="typo-id-item-val pending">0 / 9</div></div>
+      <div class="typo-id-item" id="bias-pass"><div class="typo-id-item-label">通过</div><div class="typo-id-item-val pending">未录</div></div>
+      <div class="typo-id-item" id="bias-warn"><div class="typo-id-item-label">注意</div><div class="typo-id-item-val pending">未录</div></div>
+      <div class="typo-id-item" id="bias-alert"><div class="typo-id-item-label">严重</div><div class="typo-id-item-val pending">未录</div></div>
+      <div class="typo-id-item" id="bias-top"><div class="typo-id-item-label">主要触发</div><div class="typo-id-item-val pending">未录</div></div>
+      <div class="typo-id-item" id="bias-score"><div class="typo-id-item-label">校验分</div><div class="typo-id-item-val pending">未录</div></div>
+      <div class="typo-id-item" id="bias-thresh"><div class="typo-id-item-label">触发阈值</div><div class="typo-id-item-val pending">未录</div></div>
+      <div class="typo-id-item" id="bias-evidence"><div class="typo-id-item-label">证据数</div><div class="typo-id-item-val pending">未录</div></div>
+      <div class="typo-id-item" id="bias-conf"><div class="typo-id-item-label">校验置信</div><div class="typo-id-item-val pending">未录</div></div>
+      <div class="typo-id-item" id="bias-recommend"><div class="typo-id-item-label">建议</div><div class="typo-id-item-val pending">未录</div></div>
+      <div class="typo-id-item" id="bias-fingerprint" style="grid-column: 1 / -1;"><div class="typo-id-item-label">偏差指纹</div><div class="typo-id-item-val pending mono" style="letter-spacing: 4px; font-style: normal;">·········</div></div>
     </div>
-    <div style="display: grid; grid-template-columns: 80px 1fr 1fr; gap: 12px; align-items: center; font-size: 11px; padding: 8px 0; border-bottom: 0.5px dashed var(--line);">
-      <span style="color: var(--ink-muted);">肩膀</span>
-      <span class="num" style="text-align: center; color: var(--red);">紧 4/5</span>
-      <span class="num" style="text-align: center; color: var(--amber);">紧 2/5</span>
-    </div>
-    <div style="display: grid; grid-template-columns: 80px 1fr 1fr; gap: 12px; align-items: center; font-size: 11px; padding: 8px 0; border-bottom: 0.5px dashed var(--line);">
-      <span style="color: var(--ink-muted);">呼吸</span>
-      <span class="num" style="text-align: center; color: var(--red);">浅 2/5</span>
-      <span class="num" style="text-align: center; color: var(--green);">深 4/5</span>
-    </div>
-    <div style="font-family: 'Noto Serif SC', serif; font-style: italic; color: var(--ink-muted); font-size: 11px; margin-top: 12px; line-height: 1.6;">
-      "想到 A 像被一种应该按住。想到 B 紧但兴奋的紧——像出发前一刻。"
+    <div class="typo-completion-bar"><div class="typo-completion-fill" id="bias-progress-fill" style="width: 0%;"></div></div>
+    <div class="typo-id-footer">
+      <span>@六房间合成 · v1.0</span>
+      <span class="num" id="bias-progress-val">0 / 11</span>
     </div>
   </div>
 
-  <div class="viz-card">
-    <div class="card-head" style="margin-bottom: 8px; padding-bottom: 8px;"><div class="card-title">参照群体 · 引力分析</div><div class="card-meta">REFERENCE GROUP</div></div>
-    <div style="font-size: 11px; color: var(--ink-muted); line-height: 1.7;">
-      <div style="display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 0.5px dashed var(--line);"><span>同班同学（n=28）</span><span class="num" style="color: var(--gold-deep); font-weight: 500;">85% 选 A 类</span></div>
-      <div style="display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 0.5px dashed var(--line);"><span>同事（n=12）</span><span class="num" style="color: var(--gold-deep); font-weight: 500;">67% 选 A 类</span></div>
-      <div style="display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 0.5px dashed var(--line);"><span>LinkedIn 高频联系人</span><span class="num" style="color: var(--gold-deep); font-weight: 500;">78% A 路径</span></div>
-      <div style="display: flex; justify-content: space-between; padding: 6px 0;"><span>你最近转发的内容</span><span class="num" style="color: var(--gold-deep); font-weight: 500;">62% B 倾向</span></div>
-      <div style="margin-top: 12px; padding: 10px; background: var(--amber-soft); color: var(--gold-darkest);">
-        <strong style="font-family: 'Noto Serif SC', serif; font-size: 12px;">分析结论</strong><br/>
-        <span style="font-size: 11px; line-height: 1.6;">参照群体强烈偏向 A，但你私下内容倾向 B。这种"外部行为 vs 内部偏好"差距常常意味着真实想法在 B。</span>
+  <div class="typo-tests">
+
+    <div class="typo-test">
+      <div class="typo-test-head"><div><div class="typo-test-name">9 道偏差状态 + 证据 <span class="typo-test-tag">三态 + 文本</span></div></div></div>
+      <div class="typo-test-hint">每道偏差给一个判断（通过 / 注意 / 严重），可补一句证据。</div>
+
+      <div class="bias-item">
+        <div class="bias-head">
+          <span class="bias-name">直觉信号</span>
+          <div class="bias-toggle-row" data-bias-state="bias-intuition-state">
+            <span class="bias-state-chip" data-val="pass">通过</span>
+            <span class="bias-state-chip" data-val="warn">注意</span>
+            <span class="bias-state-chip" data-val="alert">严重</span>
+          </div>
+        </div>
+        <input type="text" class="bias-evidence text-input" data-text-key="bias-intuition-evidence" data-card="Bias" placeholder="身体反应 / 第一秒念头...">
+      </div>
+
+      <div class="bias-item">
+        <div class="bias-head">
+          <span class="bias-name">恐惧驱动</span>
+          <div class="bias-toggle-row" data-bias-state="bias-fear-state">
+            <span class="bias-state-chip" data-val="pass">通过</span>
+            <span class="bias-state-chip" data-val="warn">注意</span>
+            <span class="bias-state-chip" data-val="alert">严重</span>
+          </div>
+        </div>
+        <input type="text" class="bias-evidence text-input" data-text-key="bias-fear-evidence" data-card="Bias" placeholder="在避免什么？...">
+      </div>
+
+      <div class="bias-item">
+        <div class="bias-head">
+          <span class="bias-name">从众心理</span>
+          <div class="bias-toggle-row" data-bias-state="bias-conform-state">
+            <span class="bias-state-chip" data-val="pass">通过</span>
+            <span class="bias-state-chip" data-val="warn">注意</span>
+            <span class="bias-state-chip" data-val="alert">严重</span>
+          </div>
+        </div>
+        <input type="text" class="bias-evidence text-input" data-text-key="bias-conform-evidence" data-card="Bias" placeholder="参照群体倾向？...">
+      </div>
+
+      <div class="bias-item">
+        <div class="bias-head">
+          <span class="bias-name">沉没成本</span>
+          <div class="bias-toggle-row" data-bias-state="bias-sunk-state">
+            <span class="bias-state-chip" data-val="pass">通过</span>
+            <span class="bias-state-chip" data-val="warn">注意</span>
+            <span class="bias-state-chip" data-val="alert">严重</span>
+          </div>
+        </div>
+        <input type="text" class="bias-evidence text-input" data-text-key="bias-sunk-evidence" data-card="Bias" placeholder="已经投入 X，所以...">
+      </div>
+
+      <div class="bias-item">
+        <div class="bias-head">
+          <span class="bias-name">旧脚本</span>
+          <div class="bias-toggle-row" data-bias-state="bias-script-state">
+            <span class="bias-state-chip" data-val="pass">通过</span>
+            <span class="bias-state-chip" data-val="warn">注意</span>
+            <span class="bias-state-chip" data-val="alert">严重</span>
+          </div>
+        </div>
+        <input type="text" class="bias-evidence text-input" data-text-key="bias-script-evidence" data-card="Bias" placeholder="童年驱动力词...">
+      </div>
+
+      <div class="bias-item">
+        <div class="bias-head">
+          <span class="bias-name">锚定效应</span>
+          <div class="bias-toggle-row" data-bias-state="bias-anchor-state">
+            <span class="bias-state-chip" data-val="pass">通过</span>
+            <span class="bias-state-chip" data-val="warn">注意</span>
+            <span class="bias-state-chip" data-val="alert">严重</span>
+          </div>
+        </div>
+        <input type="text" class="bias-evidence text-input" data-text-key="bias-anchor-evidence" data-card="Bias" placeholder="第一个看到的价格/方案/意见...">
+      </div>
+
+      <div class="bias-item">
+        <div class="bias-head">
+          <span class="bias-name">确认偏误</span>
+          <div class="bias-toggle-row" data-bias-state="bias-confirm-state">
+            <span class="bias-state-chip" data-val="pass">通过</span>
+            <span class="bias-state-chip" data-val="warn">注意</span>
+            <span class="bias-state-chip" data-val="alert">严重</span>
+          </div>
+        </div>
+        <input type="text" class="bias-evidence text-input" data-text-key="bias-confirm-evidence" data-card="Bias" placeholder="只在搜支持你结论的证据？...">
+      </div>
+
+      <div class="bias-item">
+        <div class="bias-head">
+          <span class="bias-name">损失厌恶</span>
+          <div class="bias-toggle-row" data-bias-state="bias-loss-state">
+            <span class="bias-state-chip" data-val="pass">通过</span>
+            <span class="bias-state-chip" data-val="warn">注意</span>
+            <span class="bias-state-chip" data-val="alert">严重</span>
+          </div>
+        </div>
+        <input type="text" class="bias-evidence text-input" data-text-key="bias-loss-evidence" data-card="Bias" placeholder="怕失去 X 远超对收益的兴奋？...">
+      </div>
+
+      <div class="bias-item">
+        <div class="bias-head">
+          <span class="bias-name">框架效应</span>
+          <div class="bias-toggle-row" data-bias-state="bias-frame-state">
+            <span class="bias-state-chip" data-val="pass">通过</span>
+            <span class="bias-state-chip" data-val="warn">注意</span>
+            <span class="bias-state-chip" data-val="alert">严重</span>
+          </div>
+        </div>
+        <input type="text" class="bias-evidence text-input" data-text-key="bias-frame-evidence" data-card="Bias" placeholder="问题措辞是否在偷偷引导？...">
       </div>
     </div>
-  </div>
-</div>
 
-<div class="section-bar"><div class="section-title">策略参数 · 五道校验开关</div><div class="section-meta">STRATEGY</div></div>
-<div class="card">
-  <div class="param-grid">
-    <div>
-      <div class="toggle-row"><div><span class="param-label">直觉信号校验</span><div class="param-label-explanation">身体反应与理性结论冲突时报告。</div></div><div class="toggle on" data-toggle="check-intuition"></div></div>
-      <div class="toggle-row"><div><span class="param-label">恐惧驱动校验</span><div class="param-label-explanation">检测倾向是否因"避免触发恐惧"而非"选项本身好"。</div></div><div class="toggle on" data-toggle="check-fear"></div></div>
-      <div class="toggle-row"><div><span class="param-label">从众心理校验</span><div class="param-label-explanation">检测倾向与参照群体的高度一致。</div></div><div class="toggle on" data-toggle="check-conform"></div></div>
-    </div>
-    <div>
-      <div class="toggle-row"><div><span class="param-label">沉没成本校验</span><div class="param-label-explanation">检测"不想浪费过去"是否在推动选择。</div></div><div class="toggle on" data-toggle="check-sunk"></div></div>
-      <div class="toggle-row"><div><span class="param-label">旧脚本校验</span><div class="param-label-explanation">检测当前动机是否来自童年驱动力库。</div></div><div class="toggle on" data-toggle="check-script"></div></div>
-
-      <div class="param-row" style="margin-top: 16px;"><div><span class="param-label">触发阈值</span><div class="param-label-explanation">校验触发的严格度。低 = 更多提示，高 = 仅严重情况提示。</div></div><span class="param-val num" id="check-thresh-val">中</span></div>
+    <div class="typo-test">
+      <div class="typo-test-head"><div><div class="typo-test-name">触发阈值 <span class="typo-test-tag">低/中/高</span></div></div></div>
+      <div class="param-row"><div><span class="param-label">校验的严格度</span><div class="param-label-explanation">低 = 更多提示，高 = 仅严重情况提示。</div></div><span class="param-val num" id="check-thresh-val">中</span></div>
       <input type="range" class="slider" min="1" max="3" value="2" step="1" data-target="check-thresh">
     </div>
+
+    <div class="typo-test">
+      <div class="typo-test-head"><div><div class="typo-test-name">参照群体引力 <span class="typo-test-tag">推算</span></div></div></div>
+      <div class="typo-test-hint">为「从众心理」补充客观数据。</div>
+      <div style="display: grid; gap: 6px;">
+        <div style="display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 0.5px dashed var(--line); font-size: 11px;"><span>同班同学倾向</span><span class="num" style="color: var(--gold-deep);">85% A</span></div>
+        <div style="display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 0.5px dashed var(--line); font-size: 11px;"><span>同事倾向</span><span class="num" style="color: var(--gold-deep);">67% A</span></div>
+        <div style="display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 0.5px dashed var(--line); font-size: 11px;"><span>LinkedIn 联系人</span><span class="num" style="color: var(--gold-deep);">78% A</span></div>
+        <div style="display: flex; justify-content: space-between; padding: 6px 0; font-size: 11px;"><span>你近期转发内容</span><span class="num" style="color: var(--gold-deep);">62% B</span></div>
+      </div>
+    </div>
+
   </div>
 </div>
 

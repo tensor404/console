@@ -49,11 +49,348 @@
 <div class="section-bar"><div class="section-title">输入数据 · 详细量化</div><div class="section-meta">INPUT METRICS</div></div>
 
 <div class="card">
-  <div class="card-head"><div class="card-title">数据收集状态</div><div class="card-meta">4 类输入源</div></div>
+  <div class="card-head"><div class="card-title">数据收集状态</div><div class="card-meta">5 类输入源</div></div>
   <div class="metric-row"><span class="metric-label">特质量表（9 维）</span><div class="metric-bar"><div class="metric-bar-fill green" style="width: 96%;"></div></div><span class="metric-val">48 / 50</span></div>
   <div class="metric-row"><span class="metric-label">价值卡片排序</span><div class="metric-bar"><div class="metric-bar-fill green" style="width: 100%;"></div></div><span class="metric-val">10 / 10</span></div>
   <div class="metric-row"><span class="metric-label">人生故事书写</span><div class="metric-bar"><div class="metric-bar-fill amber" style="width: 50%;"></div></div><span class="metric-val">4 / 8</span></div>
   <div class="metric-row"><span class="metric-label">心流日记打卡</span><div class="metric-bar"><div class="metric-bar-fill green" style="width: 100%;"></div></div><span class="metric-val">7 / 7 天</span></div>
+  <div class="metric-row"><span class="metric-label">多维典型快测（14）</span><div class="metric-bar"><div class="metric-bar-fill" id="typo-bar" style="width: 0%;"></div></div><span class="metric-val" id="typo-bar-val">0 / 14</span></div>
+</div>
+
+<div class="section-bar"><div class="section-title">多维典型快测 · 实时合成 ID 卡</div><div class="section-meta">TYPOLOGY · LIVE SYNTHESIS</div></div>
+
+<div class="typo-layout">
+
+  <!-- ID Card -->
+  <div class="typo-id-card">
+    <div class="typo-id-label">TYPOLOGY_ID_CARD</div>
+    <div class="typo-id-name-row">
+      <input type="text" class="typo-id-name" id="typo-name" value="林叙" maxlength="16" autocomplete="off">
+      <span class="typo-id-edit-hint">可编辑</span>
+    </div>
+    <div class="typo-id-grid">
+      <div class="typo-id-item" id="card-mbti"><div class="typo-id-item-label">MBTI</div><div class="typo-id-item-val pending">未测</div></div>
+      <div class="typo-id-item" id="card-enn"><div class="typo-id-item-label">九型人格</div><div class="typo-id-item-val pending">未测</div></div>
+      <div class="typo-id-item" id="card-phil"><div class="typo-id-item-label">哲学倾向</div><div class="typo-id-item-val pending">未测</div></div>
+      <div class="typo-id-item" id="card-romantic"><div class="typo-id-item-label">浪漫倾向</div><div class="typo-id-item-val pending">未测</div></div>
+      <div class="typo-id-item" id="card-attach"><div class="typo-id-item-label">依恋类型</div><div class="typo-id-item-val pending">未测</div></div>
+      <div class="typo-id-item" id="card-ideal"><div class="typo-id-item-label">理想型</div><div class="typo-id-item-val pending">未测</div></div>
+      <div class="typo-id-item" id="card-dnd"><div class="typo-id-item-label">DnD 阵营</div><div class="typo-id-item-val pending">未测</div></div>
+      <div class="typo-id-item" id="card-soc"><div class="typo-id-item-label">社会人格</div><div class="typo-id-item-val pending">未测</div></div>
+      <div class="typo-id-item" id="card-humor"><div class="typo-id-item-label">体液气质</div><div class="typo-id-item-val pending">未测</div></div>
+      <div class="typo-id-item" id="card-jung"><div class="typo-id-item-label">经典荣格</div><div class="typo-id-item-val pending">未测</div></div>
+      <div class="typo-id-item" id="card-lvef"><div class="typo-id-item-label">态度心理</div><div class="typo-id-item-val pending">未测</div></div>
+      <div class="typo-id-item" id="card-big5"><div class="typo-id-item-label">大五人格</div><div class="typo-id-item-val pending">未测</div></div>
+      <div class="typo-id-item" id="card-hol"><div class="typo-id-item-label">霍兰德</div><div class="typo-id-item-val pending">未测</div></div>
+      <div class="typo-id-item" id="card-disc"><div class="typo-id-item-label">DISC</div><div class="typo-id-item-val pending">未测</div></div>
+    </div>
+    <div class="typo-completion-bar"><div class="typo-completion-fill" id="typo-fill" style="width: 0%;"></div></div>
+    <div class="typo-id-footer">
+      <span>@六房间合成 · v1.0</span>
+      <span class="typo-id-badge serif">叙</span>
+    </div>
+    <div class="typo-card-actions">
+      <button class="typo-card-btn" id="typo-reset-btn">重置全部</button>
+      <button class="typo-card-btn" id="typo-random-btn">随机填充</button>
+      <button class="typo-card-btn primary" id="typo-export-btn">导出 JSON</button>
+    </div>
+  </div>
+
+  <!-- Tests panel -->
+  <div class="typo-tests">
+
+    <!-- 1. MBTI -->
+    <div class="typo-test" data-test="mbti">
+      <div class="typo-test-head">
+        <div><div class="typo-test-name">MBTI <span class="typo-test-tag">16型 · 4 轴</span></div></div>
+        <div class="typo-test-result empty" id="res-mbti">未测</div>
+      </div>
+      <div class="typo-test-hint">滑块拖向你更倾向的一端。</div>
+      <div class="axis-block">
+        <div class="axis-row" data-axis="mbti-ie">
+          <span class="axis-letter left" data-side="L">E</span>
+          <div class="axis-track"><div class="axis-fill-l"></div><div class="axis-fill-r"></div><div class="axis-thumb"></div></div>
+          <span class="axis-letter" data-side="R">I</span>
+          <span class="axis-pct">—</span>
+        </div>
+        <div class="axis-row" data-axis="mbti-sn">
+          <span class="axis-letter left" data-side="L">S</span>
+          <div class="axis-track"><div class="axis-fill-l"></div><div class="axis-fill-r"></div><div class="axis-thumb"></div></div>
+          <span class="axis-letter" data-side="R">N</span>
+          <span class="axis-pct">—</span>
+        </div>
+        <div class="axis-row" data-axis="mbti-tf">
+          <span class="axis-letter left" data-side="L">T</span>
+          <div class="axis-track"><div class="axis-fill-l"></div><div class="axis-fill-r"></div><div class="axis-thumb"></div></div>
+          <span class="axis-letter" data-side="R">F</span>
+          <span class="axis-pct">—</span>
+        </div>
+        <div class="axis-row" data-axis="mbti-jp">
+          <span class="axis-letter left" data-side="L">J</span>
+          <div class="axis-track"><div class="axis-fill-l"></div><div class="axis-fill-r"></div><div class="axis-thumb"></div></div>
+          <span class="axis-letter" data-side="R">P</span>
+          <span class="axis-pct">—</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. Enneagram -->
+    <div class="typo-test" data-test="enn">
+      <div class="typo-test-head">
+        <div><div class="typo-test-name">九型人格 <span class="typo-test-tag">主型 · 翼 · 三元 · 本能</span></div></div>
+        <div class="typo-test-result empty" id="res-enn">未测</div>
+      </div>
+      <div class="typo-test-hint">选你的主型；其余系统会建议合理翼侧与三元。</div>
+      <div class="chip-row" data-pick-single="enn-main">
+        <div class="chip" data-val="1"><span class="chip-num">1</span>完美</div>
+        <div class="chip" data-val="2"><span class="chip-num">2</span>助人</div>
+        <div class="chip" data-val="3"><span class="chip-num">3</span>成就</div>
+        <div class="chip" data-val="4"><span class="chip-num">4</span>自我</div>
+        <div class="chip" data-val="5"><span class="chip-num">5</span>观察</div>
+        <div class="chip" data-val="6"><span class="chip-num">6</span>忠诚</div>
+        <div class="chip" data-val="7"><span class="chip-num">7</span>活跃</div>
+        <div class="chip" data-val="8"><span class="chip-num">8</span>挑战</div>
+        <div class="chip" data-val="9"><span class="chip-num">9</span>和平</div>
+      </div>
+      <div class="sub-control"><span style="font-size:10px;letter-spacing:0.1em;color:var(--muted);width:60px;">翼侧</span>
+        <div class="chip-row" data-pick-single="enn-wing" id="enn-wing-chips">
+          <div class="chip" data-val="auto">自动</div>
+        </div>
+      </div>
+      <div class="sub-control"><span style="font-size:10px;letter-spacing:0.1em;color:var(--muted);width:60px;">本能</span>
+        <div class="chip-row" data-pick-single="enn-instinct">
+          <div class="chip" data-val="SX/SO">SX/SO</div>
+          <div class="chip" data-val="SX/SP">SX/SP</div>
+          <div class="chip" data-val="SO/SX">SO/SX</div>
+          <div class="chip" data-val="SO/SP">SO/SP</div>
+          <div class="chip" data-val="SP/SX">SP/SX</div>
+          <div class="chip" data-val="SP/SO">SP/SO</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. 哲学倾向 -->
+    <div class="typo-test" data-test="phil">
+      <div class="typo-test-head">
+        <div><div class="typo-test-name">哲学倾向 <span class="typo-test-tag">单选</span></div></div>
+        <div class="typo-test-result empty" id="res-phil">未测</div>
+      </div>
+      <div class="chip-row" data-pick-single="phil">
+        <div class="chip" data-val="存在主义者">存在主义者</div>
+        <div class="chip" data-val="虚无主义者">虚无主义者</div>
+        <div class="chip" data-val="斯多葛主义者">斯多葛主义者</div>
+        <div class="chip" data-val="享乐主义者">享乐主义者</div>
+        <div class="chip" data-val="理性主义者">理性主义者</div>
+        <div class="chip" data-val="经验主义者">经验主义者</div>
+        <div class="chip" data-val="实用主义者">实用主义者</div>
+        <div class="chip" data-val="浪漫主义者">浪漫主义者</div>
+      </div>
+    </div>
+
+    <!-- 4. 浪漫倾向 -->
+    <div class="typo-test" data-test="romantic">
+      <div class="typo-test-head">
+        <div><div class="typo-test-name">浪漫倾向 <span class="typo-test-tag">对象 × 节奏</span></div></div>
+        <div class="typo-test-result empty" id="res-romantic">未测</div>
+      </div>
+      <div class="sub-control"><span style="font-size:10px;letter-spacing:0.1em;color:var(--muted);width:60px;">对象</span>
+        <div class="chip-row" data-pick-single="rom-obj">
+          <div class="chip" data-val="异性">异性</div>
+          <div class="chip" data-val="同性">同性</div>
+          <div class="chip" data-val="泛性">泛性</div>
+          <div class="chip" data-val="无性">无性</div>
+        </div>
+      </div>
+      <div class="sub-control"><span style="font-size:10px;letter-spacing:0.1em;color:var(--muted);width:60px;">节奏</span>
+        <div class="chip-row" data-pick-single="rom-rhy">
+          <div class="chip" data-val="稳定">稳定</div>
+          <div class="chip" data-val="波动">波动</div>
+          <div class="chip" data-val="燃烧">燃烧</div>
+          <div class="chip" data-val="冷感">冷感</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5. 依恋类型 -->
+    <div class="typo-test" data-test="attach">
+      <div class="typo-test-head">
+        <div><div class="typo-test-name">依恋类型 <span class="typo-test-tag">Bartholomew 四型</span></div></div>
+        <div class="typo-test-result empty" id="res-attach">未测</div>
+      </div>
+      <div class="chip-row" data-pick-single="attach">
+        <div class="chip" data-val="安全型">安全型 · 低焦虑低回避</div>
+        <div class="chip" data-val="焦虑型">焦虑型 · 高焦虑低回避</div>
+        <div class="chip" data-val="回避型">回避型 · 低焦虑高回避</div>
+        <div class="chip" data-val="恐惧型">恐惧型 · 高焦虑高回避</div>
+      </div>
+    </div>
+
+    <!-- 6. 理想型 (mirror MBTI sliders) -->
+    <div class="typo-test" data-test="ideal">
+      <div class="typo-test-head">
+        <div><div class="typo-test-name">理想型 <span class="typo-test-tag">期待对方的 MBTI</span></div></div>
+        <div class="typo-test-result empty" id="res-ideal">未测</div>
+      </div>
+      <div class="typo-test-hint">滑向你更希望对方所处的一端（不一定与自己相同）。</div>
+      <div class="axis-block">
+        <div class="axis-row" data-axis="ideal-ie">
+          <span class="axis-letter left" data-side="L">E</span>
+          <div class="axis-track"><div class="axis-fill-l"></div><div class="axis-fill-r"></div><div class="axis-thumb"></div></div>
+          <span class="axis-letter" data-side="R">I</span>
+          <span class="axis-pct">—</span>
+        </div>
+        <div class="axis-row" data-axis="ideal-sn">
+          <span class="axis-letter left" data-side="L">S</span>
+          <div class="axis-track"><div class="axis-fill-l"></div><div class="axis-fill-r"></div><div class="axis-thumb"></div></div>
+          <span class="axis-letter" data-side="R">N</span>
+          <span class="axis-pct">—</span>
+        </div>
+        <div class="axis-row" data-axis="ideal-tf">
+          <span class="axis-letter left" data-side="L">T</span>
+          <div class="axis-track"><div class="axis-fill-l"></div><div class="axis-fill-r"></div><div class="axis-thumb"></div></div>
+          <span class="axis-letter" data-side="R">F</span>
+          <span class="axis-pct">—</span>
+        </div>
+        <div class="axis-row" data-axis="ideal-jp">
+          <span class="axis-letter left" data-side="L">J</span>
+          <div class="axis-track"><div class="axis-fill-l"></div><div class="axis-fill-r"></div><div class="axis-thumb"></div></div>
+          <span class="axis-letter" data-side="R">P</span>
+          <span class="axis-pct">—</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 7. DnD alignment -->
+    <div class="typo-test" data-test="dnd">
+      <div class="typo-test-head">
+        <div><div class="typo-test-name">DnD 阵营 <span class="typo-test-tag">9 宫格</span></div></div>
+        <div class="typo-test-result empty" id="res-dnd">未测</div>
+      </div>
+      <div class="align-grid" data-pick-single="dnd">
+        <div class="align-cell" data-val="守序善良"><span class="align-cell-short">守序善良</span></div>
+        <div class="align-cell" data-val="中立善良"><span class="align-cell-short">中立善良</span></div>
+        <div class="align-cell" data-val="混乱善良"><span class="align-cell-short">混乱善良</span></div>
+        <div class="align-cell" data-val="守序中立"><span class="align-cell-short">守序中立</span></div>
+        <div class="align-cell" data-val="绝对中立"><span class="align-cell-short">绝对中立</span></div>
+        <div class="align-cell" data-val="混乱中立"><span class="align-cell-short">混乱中立</span></div>
+        <div class="align-cell" data-val="守序邪恶"><span class="align-cell-short">守序邪恶</span></div>
+        <div class="align-cell" data-val="中立邪恶"><span class="align-cell-short">中立邪恶</span></div>
+        <div class="align-cell" data-val="混乱邪恶"><span class="align-cell-short">混乱邪恶</span></div>
+      </div>
+    </div>
+
+    <!-- 8. Socionics -->
+    <div class="typo-test" data-test="soc">
+      <div class="typo-test-head">
+        <div><div class="typo-test-name">社会人格 <span class="typo-test-tag">Socionics · 16 型</span></div></div>
+        <div class="typo-test-result empty" id="res-soc">未测</div>
+      </div>
+      <div class="typo-test-hint">默认根据你的 MBTI 自动映射；不满意可手动覆盖。</div>
+      <div class="chip-row" data-pick-single="soc">
+        <div class="chip" data-val="ILE">ILE</div><div class="chip" data-val="SEI">SEI</div>
+        <div class="chip" data-val="ESE">ESE</div><div class="chip" data-val="LII">LII</div>
+        <div class="chip" data-val="EIE">EIE</div><div class="chip" data-val="LSI">LSI</div>
+        <div class="chip" data-val="SLE">SLE</div><div class="chip" data-val="IEI">IEI</div>
+        <div class="chip" data-val="SEE">SEE</div><div class="chip" data-val="ILI">ILI</div>
+        <div class="chip" data-val="LIE">LIE</div><div class="chip" data-val="ESI">ESI</div>
+        <div class="chip" data-val="LSE">LSE</div><div class="chip" data-val="EII">EII</div>
+        <div class="chip" data-val="IEE">IEE</div><div class="chip" data-val="SLI">SLI</div>
+      </div>
+    </div>
+
+    <!-- 9. 体液气质 -->
+    <div class="typo-test" data-test="humor">
+      <div class="typo-test-head">
+        <div><div class="typo-test-name">体液气质 <span class="typo-test-tag">四液说</span></div></div>
+        <div class="typo-test-result empty" id="res-humor">未测</div>
+      </div>
+      <div class="chip-row" data-pick-single="humor">
+        <div class="chip" data-val="多血质">多血质 · 热情敏捷</div>
+        <div class="chip" data-val="胆汁质">胆汁质 · 冲动激烈</div>
+        <div class="chip" data-val="粘液质">粘液质 · 沉稳缓慢</div>
+        <div class="chip" data-val="抑郁质">抑郁质 · 敏感深沉</div>
+      </div>
+    </div>
+
+    <!-- 10. 经典荣格 -->
+    <div class="typo-test" data-test="jung">
+      <div class="typo-test-head">
+        <div><div class="typo-test-name">经典荣格 <span class="typo-test-tag">主导功能 · 辅助功能</span></div></div>
+        <div class="typo-test-result empty" id="res-jung">未测</div>
+      </div>
+      <div class="sub-control"><span style="font-size:10px;letter-spacing:0.1em;color:var(--muted);width:60px;">主导</span>
+        <div class="chip-row" data-pick-single="jung-dom">
+          <div class="chip" data-val="Te">Te</div><div class="chip" data-val="Ti">Ti</div>
+          <div class="chip" data-val="Fe">Fe</div><div class="chip" data-val="Fi">Fi</div>
+          <div class="chip" data-val="Se">Se</div><div class="chip" data-val="Si">Si</div>
+          <div class="chip" data-val="Ne">Ne</div><div class="chip" data-val="Ni">Ni</div>
+        </div>
+      </div>
+      <div class="sub-control"><span style="font-size:10px;letter-spacing:0.1em;color:var(--muted);width:60px;">辅助</span>
+        <div class="chip-row" data-pick-single="jung-aux">
+          <div class="chip" data-val="T">T</div><div class="chip" data-val="F">F</div>
+          <div class="chip" data-val="S">S</div><div class="chip" data-val="N">N</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 11. 态度心理 LVEF -->
+    <div class="typo-test" data-test="lvef">
+      <div class="typo-test-head">
+        <div><div class="typo-test-name">态度心理 <span class="typo-test-tag">L V E F 排序</span></div></div>
+        <div class="typo-test-result empty" id="res-lvef">未测</div>
+      </div>
+      <div class="typo-test-hint">把 4 个面相按你的「确信→质疑」排序。L=逻辑 V=意志 E=情感 F=肉身。</div>
+      <div class="rank-list" id="lvef-list"></div>
+    </div>
+
+    <!-- 12. 大五 OCEAN -->
+    <div class="typo-test" data-test="big5">
+      <div class="typo-test-head">
+        <div><div class="typo-test-name">大五人格 <span class="typo-test-tag">OCEAN · SLOAN 码</span></div></div>
+        <div class="typo-test-result empty" id="res-big5">未测</div>
+      </div>
+      <div class="quad-bars">
+        <div class="quad-bar-row" data-quad="big-o"><span class="quad-bar-label">O<span class="quad-bar-label-zh">开放</span></span><div class="quad-bar-track"><div class="quad-bar-fill"></div></div><span class="quad-bar-val">—</span></div>
+        <div class="quad-bar-row" data-quad="big-c"><span class="quad-bar-label">C<span class="quad-bar-label-zh">尽责</span></span><div class="quad-bar-track"><div class="quad-bar-fill"></div></div><span class="quad-bar-val">—</span></div>
+        <div class="quad-bar-row" data-quad="big-e"><span class="quad-bar-label">E<span class="quad-bar-label-zh">外向</span></span><div class="quad-bar-track"><div class="quad-bar-fill"></div></div><span class="quad-bar-val">—</span></div>
+        <div class="quad-bar-row" data-quad="big-a"><span class="quad-bar-label">A<span class="quad-bar-label-zh">宜人</span></span><div class="quad-bar-track"><div class="quad-bar-fill"></div></div><span class="quad-bar-val">—</span></div>
+        <div class="quad-bar-row" data-quad="big-n"><span class="quad-bar-label">N<span class="quad-bar-label-zh">神经质</span></span><div class="quad-bar-track"><div class="quad-bar-fill"></div></div><span class="quad-bar-val">—</span></div>
+      </div>
+    </div>
+
+    <!-- 13. Holland -->
+    <div class="typo-test" data-test="hol">
+      <div class="typo-test-head">
+        <div><div class="typo-test-name">霍兰德 RIASEC <span class="typo-test-tag">点击递增 · 取前 2</span></div></div>
+        <div class="typo-test-result empty" id="res-hol">未测</div>
+      </div>
+      <div class="typo-test-hint">每点一次代表多一份兴趣分；取得分前两位作为代码。</div>
+      <div class="hex-rank" data-hex="hol">
+        <div class="hex-cell" data-val="R"><span class="hex-letter">R</span>现实<span class="hex-rank-badge"></span></div>
+        <div class="hex-cell" data-val="I"><span class="hex-letter">I</span>研究<span class="hex-rank-badge"></span></div>
+        <div class="hex-cell" data-val="A"><span class="hex-letter">A</span>艺术<span class="hex-rank-badge"></span></div>
+        <div class="hex-cell" data-val="S"><span class="hex-letter">S</span>社会<span class="hex-rank-badge"></span></div>
+        <div class="hex-cell" data-val="E"><span class="hex-letter">E</span>企业<span class="hex-rank-badge"></span></div>
+        <div class="hex-cell" data-val="C"><span class="hex-letter">C</span>事务<span class="hex-rank-badge"></span></div>
+      </div>
+    </div>
+
+    <!-- 14. DISC -->
+    <div class="typo-test" data-test="disc">
+      <div class="typo-test-head">
+        <div><div class="typo-test-name">DISC <span class="typo-test-tag">行为四向</span></div></div>
+        <div class="typo-test-result empty" id="res-disc">未测</div>
+      </div>
+      <div class="quad-bars">
+        <div class="quad-bar-row" data-quad="disc-d"><span class="quad-bar-label">D<span class="quad-bar-label-zh">支配</span></span><div class="quad-bar-track"><div class="quad-bar-fill"></div></div><span class="quad-bar-val">—</span></div>
+        <div class="quad-bar-row" data-quad="disc-i"><span class="quad-bar-label">I<span class="quad-bar-label-zh">影响</span></span><div class="quad-bar-track"><div class="quad-bar-fill"></div></div><span class="quad-bar-val">—</span></div>
+        <div class="quad-bar-row" data-quad="disc-s"><span class="quad-bar-label">S<span class="quad-bar-label-zh">稳健</span></span><div class="quad-bar-track"><div class="quad-bar-fill"></div></div><span class="quad-bar-val">—</span></div>
+        <div class="quad-bar-row" data-quad="disc-c"><span class="quad-bar-label">C<span class="quad-bar-label-zh">谨慎</span></span><div class="quad-bar-track"><div class="quad-bar-fill"></div></div><span class="quad-bar-val">—</span></div>
+      </div>
+    </div>
+
+  </div>
 </div>
 
 <div class="viz-grid">
